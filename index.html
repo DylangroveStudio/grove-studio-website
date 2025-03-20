@@ -6,654 +6,7 @@
     <meta name="description" content="Melbourne-based architecture practice specialising in mid-century modern inspired residential transformations.">
     <title>Grove Studio | Contemporary Residential Architecture Melbourne</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #333;
-            --secondary-color: #666;
-            --accent-color: #BF9000; /* Gold accent color */
-            --light-bg: #f9f9f9;
-            --medium-bg: #f0f0f0;
-            --dark-bg: #ddd;
-            --font-primary: 'Helvetica Neue', Arial, sans-serif;
-            --font-secondary: 'Georgia', serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--font-primary);
-            color: var(--primary-color);
-            line-height: 1.6;
-            background-color: var(--light-bg);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-        
-        p {
-            margin-bottom: 1.5rem;
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        a:hover {
-            color: var(--accent-color);
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary-color);
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 14px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-color);
-            color: white;
-        }
-        
-        .section {
-            padding: 80px 0;
-        }
-        
-        /* Header Styles */
-        .header {
-            padding: 20px 0;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .nav-links li {
-            margin-left: 30px;
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .nav-links a {
-            text-transform: uppercase;
-            font-size: 14px;
-            letter-spacing: 1px;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            height: 100%;
-        }
-        
-        .nav-links a.active {
-            color: var(--accent-color);
-        }
-        
-        .nav-cta {
-            margin-left: 30px;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background-color: var(--medium-bg);
-            overflow: hidden;
-        }
-        
-        .hero-image {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 60%; /* Using rule of thirds for better balance */
-            height: 100%;
-            background-color: var(--dark-bg);
-            background-image: url('gifs/approach-homepagehowework1.gif'); /* Updated to new GIF */
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            margin-left: 65%; /* Ensuring clear separation from image */
-            max-width: 500px;
-            background-color: rgba(255, 255, 255, 0.9); /* Adding slight background to ensure text readability */
-            padding: 30px;
-            border-radius: 4px;
-        }
-        
-        .hero-title {
-            font-size: 2.5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-text {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-        }
-        
-        /* Featured Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .project-item {
-            background-color: var(--medium-bg);
-            position: relative;
-            overflow: hidden;
-            height: 200px;
-            cursor: pointer;
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s ease;
-        }
-        
-        .project-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: all 0.3s ease;
-        }
-        
-        .project-item:hover .project-overlay {
-            transform: translateY(0);
-        }
-        
-        .project-item:hover .project-image {
-            transform: scale(1.05);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-        
-        /* About Page */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .portrait-container {
-            background-color: var(--medium-bg);
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .portrait {
-            max-width: 80%;
-            max-height: 80%;
-            object-fit: cover;
-        }
-        
-        .credentials-philosophy {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        
-        .credentials, .philosophy {
-            background-color: var(--medium-bg);
-            padding: 30px;
-        }
-        
-        /* Portfolio Page */
-        .portfolio-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-        }
-        
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            margin: 30px 0;
-        }
-        
-        .filter-btn {
-            background: none;
-            border: none;
-            padding: 10px 20px;
-            margin: 0 5px;
-            cursor: pointer;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .filter-btn.active {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        
-        .portfolio-item {
-            background-color: var(--medium-bg);
-            overflow: hidden;
-            cursor: pointer;
-        }
-        
-        .portfolio-image {
-            height: 250px;
-            background-color: var(--dark-bg);
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .portfolio-content {
-            padding: 20px;
-        }
-        
-        .portfolio-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Project Detail */
-        .project-detail {
-            background-color: var(--light-bg);
-            padding: 40px;
-            margin-top: 30px;
-            border-radius: 5px;
-            position: relative;
-            display: none;
-            opacity: 1;
-            transition: opacity 0.4s ease;
-        }
-        
-        .project-section {
-            margin-bottom: 30px;
-        }
-        
-        .project-section-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 5px;
-            display: inline-block;
-        }
-        
-        .project-title {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .project-gif-container {
-            margin: 30px 0;
-            max-width: 100%;
-            text-align: center;
-        }
-        
-        .project-gif {
-            max-width: 100%;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        .project-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid var(--dark-bg);
-        }
-        
-        /* Process Page */
-        .process-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .process-animation {
-            margin: 40px auto;
-            max-width: 600px;
-            max-height: 600px;
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1/1;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-        }
-        
-        .centered-gif {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        
-        .process-steps {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .process-line {
-            position: absolute;
-            top: 30px; /* Centered through the circles */
-            left: 50px;
-            right: 50px;
-            height: 2px;
-            background-color: var(--dark-bg);
-            z-index: 0;
-        }
-        
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .step {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100px;
-        }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            margin-bottom: 15px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2; /* Ensure this appears over the line */
-        }
-        
-        .step-number:hover {
-            background-color: var(--accent-color);
-            transform: scale(1.1);
-        }
-        
-        .step-title {
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .step-content {
-            display: none;
-            background-color: var(--medium-bg);
-            padding: 30px;
-            margin-top: 40px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .step-content.active {
-            display: block;
-        }
-        
-        .testimonials {
-            background-color: transparent;
-            padding: 40px;
-            margin-top: 60px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .testimonial-quote {
-            font-family: var(--font-secondary);
-            font-style: italic;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            max-width: 800px;
-            margin: 0 auto;
-            display: none; /* Hide all testimonials initially */
-            min-height: 150px; /* Fixed height to prevent footer jumping */
-        }
-        
-        .testimonial-quote.active {
-            display: block;
-        }
-        
-        .testimonial-controls {
-            display: flex;
-            justify-content: center;
-            margin-top: 30px;
-        }
-        
-        .testimonial-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--dark-bg);
-            margin: 0 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .testimonial-dot.active {
-            background-color: var(--accent-color);
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column {
-            flex: 1;
-            margin-right: 40px;
-        }
-        
-        .footer-column:last-child {
-            margin-right: 0;
-        }
-        
-        .footer-title {
-            font-size: 18px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-        
-        /* Page Display */
-        .page {
-            display: none;
-        }
-        
-        .page.active-page {
-            display: block;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-image {
-                width: 100%;
-                height: 50%;
-            }
-            
-            .hero-content {
-                margin-left: 0;
-                margin-top: 50vh;
-                padding: 40px;
-                max-width: 100%;
-                background-color: white;
-            }
-            
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .about-grid,
-            .credentials-philosophy,
-            .portfolio-grid,
-            .service-tiers,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .service-tiers {
-                flex-direction: column;
-            }
-            
-            .service-tier {
-                margin: 15px 0;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .section {
-                padding: 60px 0;
-            }
-            
-            .hero {
-                height: auto;
-                padding: 60px 0;
-            }
-            
-            .hero-image {
-                position: relative;
-                height: 300px;
-                width: 100%;
-            }
-            
-            .hero-content {
-                margin-top: 0;
-                padding: 40px 20px;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .steps-container {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .step {
-                margin-bottom: 30px;
-            }
-            
-            .process-line {
-                display: none;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Pages Container -->
@@ -798,7 +151,7 @@
         
         <!-- PORTFOLIO PAGE -->
         <div id="portfolio-page" class="page">
-            <!-- Header (same across all pages) -->
+            <!-- Header -->
             <header class="header">
                 <div class="container nav-container">
                     <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
@@ -813,79 +166,415 @@
                 </div>
             </header>
             
-            <!-- Portfolio content here -->
+            <!-- Portfolio Section -->
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Our Portfolio</h1>
+                    <div class="portfolio-intro">
+                        <p>Each project represents a unique transformation story where thoughtful design enhances daily living. We create spaces that reflect our clients' identities through considered spatial arrangements, authentic materials, and meaningful connections to the natural environment—resulting in homes that are both beautiful and deeply personal.</p>
+                    </div>
+                    
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="mcm">MCM Inspired</button>
+                        <button class="filter-btn" data-filter="heritage">Heritage</button>
+                        <button class="filter-btn" data-filter="sustainable">Sustainable</button>
+                    </div>
+                    
+                    <div class="portfolio-grid">
+                        <!-- MCM INSPIRED -->
+                        <div class="portfolio-item" data-category="mcm" data-project="shoreham">
+                            <div class="portfolio-image" style="background-image: url('gifs/shoreham-house1.gif');" data-project="shoreham"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Shoreham House</h3>
+                                <p>Renovation of a 1950s home with updated MCM influences</p>
+                                <a href="#" class="portfolio-link" data-project="shoreham">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="mcm" data-project="blackrock">
+                            <div class="portfolio-image" style="background-image: url('gifs/blackrock-house1.gif');" data-project="blackrock"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Black Rock House</h3>
+                                <p>Coastal home with MCM-inspired indoor-outdoor living</p>
+                                <a href="#" class="portfolio-link" data-project="blackrock">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- HERITAGE -->
+                        <div class="portfolio-item" data-category="heritage" data-project="bendigo">
+                            <div class="portfolio-image" style="background-image: url('gifs/bendigo-house1.gif');" data-project="bendigo"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Bendigo Residence</h3>
+                                <p>Renovation of an 1820 miner's cottage with modern living adaptations</p>
+                                <a href="#" class="portfolio-link" data-project="bendigo">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="heritage" data-project="richmond">
+                            <div class="portfolio-image" style="background-image: url('gifs/richmond-house1.gif');" data-project="richmond"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Richmond Terrace</h3>
+                                <p>Inner-city terrace renovation blending Balinese and urban influences</p>
+                                <a href="#" class="portfolio-link" data-project="richmond">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- SUSTAINABLE -->
+                        <div class="portfolio-item" data-category="sustainable" data-project="waikanae">
+                            <div class="portfolio-image" style="background-image: url('gifs/waikanae-house1.gif');" data-project="waikanae"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Waikanae House</h3>
+                                <p>Sustainable new build with passive design principles</p>
+                                <a href="#" class="portfolio-link" data-project="waikanae">View Project</a>
+                            </div>
+                        </div>
+                        
+                        <!-- TRANSFORMATIONS -->
+                        <div class="portfolio-item" data-category="all" data-project="middlepark">
+                            <div class="portfolio-image" style="background-image: url('gifs/middlepark-house1.gif');" data-project="middlepark"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Middle Park Transformation</h3>
+                                <p>Alterations to an architecturally designed seaside home</p>
+                                <a href="#" class="portfolio-link" data-project="middlepark">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="all" data-project="glenmore">
+                            <div class="portfolio-image" style="background-image: url('gifs/glenmore-house1.gif');" data-project="glenmore"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Glenmore Pool House</h3>
+                                <p>Shed conversion creating fully serviced pool house and guest accommodation</p>
+                                <a href="#" class="portfolio-link" data-project="glenmore">View Project</a>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="all" data-project="sassafras">
+                            <div class="portfolio-image" style="background-image: url('gifs/sassafras-house1.gif');" data-project="sassafras"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Sassafras House</h3>
+                                <p>Interior transformation creating a flexible family space</p>
+                                <a href="#" class="portfolio-link" data-project="sassafras">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <!-- SHOREHAM HOUSE -->
+                    <div id="shoreham-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Shoreham House</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved. Working within a defined budget, they needed strategic interventions that would transform key spaces without compromising the home's existing charm.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/shoreham-detail1.gif" alt="Shoreham House Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal. The master bedroom now features custom full-height storage with integrated technology, while the study offers versatile functionality for both work and guests. The laundry was completely reconfigured with dedicated zones for beach gear and pet supplies, complemented by a refreshed bathroom that maintains practical features while introducing modern elements. The transformation exemplifies how targeted design can dramatically enhance daily living without costly comprehensive renovations.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="sassafras">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="blackrock">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Add all other project detail sections here -->
+                </div>
+            </section>
             
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Based in Toorak, Melbourne</li>
+                                <li>info@grovestudio.au</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
         </div>
         
-        <!-- Add other pages here -->
+        <!-- APPROACH PAGE -->
+        <div id="approach-page" class="page">
+            <!-- Header -->
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" class="active" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <!-- Approach Content -->
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Our Approach</h1>
+                    <div class="process-intro">
+                        <h3>A Transparent Process Built Around Your Vision</h3>
+                        <p>Research shows that established professionals value transparent communication above all other qualities in their architect. Our structured yet adaptable process prioritises clear dialogue at every stage, ensuring your personal vision guides all design decisions. We've developed this approach to transform what might otherwise be a complex journey into an engaging and rewarding experience.</p>
+                        
+                        <!-- Process Animation -->
+                        <div class="process-animation">
+                            <img src="gifs/approach-howwework1.gif" alt="Our Design Process" class="centered-gif">
+                        </div>
+                    </div>
+                    
+                    <div class="process-steps">
+                        <div class="process-line"></div>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number" data-step="1">1</div>
+                                <div class="step-title">Discovery</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="2">2</div>
+                                <div class="step-title">Concept Design</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="3">3</div>
+                                <div class="step-title">Design Development</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="4">4</div>
+                                <div class="step-title">Town Planning</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="5">5</div>
+                                <div class="step-title">Construction Documentation</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="6">6</div>
+                                <div class="step-title">Site Presence</div>
+                            </div>
+                        </div>
+                        
+                        <div id="step-1" class="step-content active">
+                            <h3>Stage 1: Discovery Package</h3>
+                            <p>Our Discovery Package provides a structured first step to explore your project's potential, ensuring meaningful alignment between your aspirations and our expertise. For a fixed fee, you'll receive a comprehensive assessment and strategic framework tailored to your site and needs.</p>
+                            <p>During this phase, we'll:</p>
+                            <ul>
+                                <li>Visit your site to deeply understand your vision and lifestyle requirements</li>
+                                <li>Explore your property's unique potential through expert analysis</li>
+                                <li>Review planning regulations and building requirements that may impact your project</li>
+                                <li>Create preliminary hand-sketched concepts that visualise possibilities</li>
+                                <li>Present a beautifully bound document outlining our findings and recommendations</li>
+                                <li>Discuss budget considerations and next steps with no pressure for immediate decisions</li>
+                            </ul>
+                            <p>This package concludes with a clear understanding of what's possible, providing a solid foundation for deciding whether and how to proceed with your project.</p>
+                        </div>
+                        
+                        <div id="step-2" class="step-content">
+                            <h3>Stage 2: Project Coordination & Concept Design</h3>
+                            <p>We transform initial concepts into reality by bringing together practical considerations with creative vision. This phase bridges the gap between ideas and implementation.</p>
+                            <p>Key inclusions:</p>
+                            <ul>
+                                <li>Getting practical cost insights from builders</li>
+                                <li>Refining project scope based on budget feedback</li>
+                                <li>Developing schematic floor plans and spatial arrangements</li>
+                                <li>Creating initial material and aesthetic direction</li>
+                                <li>Producing preliminary 3D visualisations</li>
+                                <li>Exploring sustainability considerations and strategies</li>
+                                <li>Presenting design options with pros and cons of each approach</li>
+                                <li>Refining preferred concept based on your feedback</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-3" class="step-content">
+                            <h3>Stage 3: Design Development</h3>
+                            <p>Once the concept is approved, we refine all aspects of the design in greater detail, ensuring everything works together harmoniously.</p>
+                            <p>This phase includes:</p>
+                            <ul>
+                                <li>Detailed floor plans, elevations, and sections</li>
+                                <li>Material selections and finishes</li>
+                                <li>More sophisticated 3D visualisations</li>
+                                <li>Integration of structural, mechanical, and electrical systems</li>
+                                <li>Preliminary cost estimates from potential builders</li>
+                            </ul>
+                            <p>The development phase ensures that the design is both beautiful and buildable, with all systems and details resolved.</p>
+                        </div>
+                        
+                        <div id="step-4" class="step-content">
+                            <h3>Stage 4: Town Planning (if required)</h3>
+                            <p>We prepare the application in response to statutory authority requirements, including plans, diagrams, analyses, studies, reports and other information, and formally lodge it as advised.</p>
+                            <p>This phase may include:</p>
+                            <ul>
+                                <li>Preparation of town planning documentation</li>
+                                <li>Consultation with relevant authorities</li>
+                                <li>Management of the application process</li>
+                                <li>Responding to requests for information</li>
+                                <li>Guidance through the approval process</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-5" class="step-content">
+                            <h3>Stage 5: Construction Documentation</h3>
+                            <p>With the design fully resolved, we prepare comprehensive documentation for building permits, contractor bidding, and construction.</p>
+                            <p>Documentation includes:</p>
+                            <ul>
+                                <li>Detailed construction drawings and specifications</li>
+                                <li>Material and finishes schedules</li>
+                                <li>Coordination with engineering consultants</li>
+                                <li>Building permit application assistance</li>
+                                <li>Tender documentation for contractor selection</li>
+                            </ul>
+                            <p>Clear, thorough documentation is essential for accurate pricing and smooth construction. We take pride in our meticulous attention to detail in this phase.</p>
+                        </div>
+                        
+                        <div id="step-6" class="step-content">
+                            <h3>Stage 6: Site Presence During Construction</h3>
+                            <p>Unlike many architects who hand off after documentation, we maintain an active presence throughout the construction process, ensuring your vision is properly executed.</p>
+                            <p>Our site services include:</p>
+                            <ul>
+                                <li>Regular site visits to monitor construction quality and progress</li>
+                                <li>Addressing contractor questions and providing design clarifications</li>
+                                <li>Reviewing shop drawings and material submissions</li>
+                                <li>Resolving any unexpected issues that arise during construction</li>
+                                <li>Conducting detailed inspections at key milestones</li>
+                                <li>Facilitating clear communication between all stakeholders</li>
+                            </ul>
+                            <p>Our continued involvement during construction provides peace of mind and ensures that the finished project truly reflects the design intent and quality you expect.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Testimonials -->
+                    <div class="testimonials">
+                        <h2 style="margin-bottom: 30px;">What Our Clients Say</h2>
+                        <div id="testimonial-1" class="testimonial-quote active">
+                            <p>"We are so glad we trusted his design vision. Our home both looks and feels incredible."</p>
+                            <p class="testimonial-author">— Verity and Mike, Homeowners, Malvern</p>
+                        </div>
+                        
+                        <div id="testimonial-2" class="testimonial-quote">
+                            <p>"Dylan has a fabulous design eye, from the macro concept down to the perfect drawer handle... He is very easy to work with and spends the time getting to know the client."</p>
+                            <p class="testimonial-author">— Alice Long, Client Advocate and Project Manager, VIC</p>
+                        </div>
+                        
+                        <div id="testimonial-3" class="testimonial-quote">
+                            <p>"We are very thankful to Dylan and recommend him if you have a project that needs a high-end, bespoke finish."</p>
+                            <p class="testimonial-author">— Joel and Paula, Homeowners, Richmond, VIC</p>
+                        </div>
+                        
+                        <div id="testimonial-4" class="testimonial-quote">
+                            <p>"He's not an architect who designs just for the sake of a beautiful design, he greatly considers the people who will be living in it and bringing it to life. When he presented us with the final design, we felt an overwhelming sense that Dylan had created something that was truly 'us'."</p>
+                            <p class="testimonial-author">— Kate and Josh, Homeowners, Brisbane</p>
+                        </div>
+                        
+                        <div class="testimonial-controls">
+                            <div class="testimonial-dot active" data-testimonial="1"></div>
+                            <div class="testimonial-dot" data-testimonial="2"></div>
+                            <div class="testimonial-dot" data-testimonial="3"></div>
+                            <div class="testimonial-dot" data-testimonial="4"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA -->
+                    <div style="text-align: center; margin-top: 60px;">
+                        <h3>Ready to Begin Your Design Journey?</h3>
+                        <p style="max-width: 600px; margin: 20px auto 30px;">Start with our Discovery Package to explore your project's potential with clarity and confidence.</p>
+                        <a href="#" class="btn" data-page="services-page">Explore Our Services</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Based in Toorak, Melbourne</li>
+                                <li>info@grovestudio.au</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- SERVICES PAGE -->
+        <!-- Add Services page content here -->
+        
+        <!-- ABOUT PAGE -->
+        <!-- Add About page content here -->
+        
+        <!-- CONTACT PAGE -->
+        <!-- Add Contact page content here -->
     </div>
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // ==============================
-            // PAGE NAVIGATION
-            // ==============================
-            const navLinks = document.querySelectorAll('a[data-page]');
-            const portfolioItems = document.querySelectorAll('.portfolio-item');
-            
-            // Handle standard page navigation
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get the target page
-                    const targetPage = this.getAttribute('data-page');
-                    
-                    // Hide all pages
-                    document.querySelectorAll('.page').forEach(page => {
-                        page.classList.remove('active-page');
-                    });
-                    
-                    // Show the target page
-                    document.getElementById(targetPage).classList.add('active-page');
-                    
-                    // Update active link in navigation
-                    document.querySelectorAll('.nav-links a').forEach(navLink => {
-                        navLink.classList.remove('active');
-                    });
-                    
-                    // Add active class to current page link
-                    document.querySelectorAll(`.nav-links a[data-page="${targetPage}"]`).forEach(navLink => {
-                        if (!navLink.classList.contains('btn')) {
-                            navLink.classList.add('active');
-                        }
-                    });
-                    
-                    // Scroll to top of page
-                    window.scrollTo(0, 0);
-                });
-            });
-            
-            // GIF handling - only animate on hover
-            const projectImages = document.querySelectorAll('.project-image');
-            
-            projectImages.forEach(image => {
-                // Store src
-                const originalSrc = image.src;
-                
-                // Create a static version by capturing the first frame
-                const staticSrc = originalSrc;
-                
-                // Pause GIFs by default
-                image.src = staticSrc;
-                
-                // Add hover events
-                image.parentElement.addEventListener('mouseenter', () => {
-                    image.src = originalSrc;
-                });
-                
-                image.parentElement.addEventListener('mouseleave', () => {
-                    image.src = staticSrc;
-                });
-            });
-            
-            // More JavaScript can be added here
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
