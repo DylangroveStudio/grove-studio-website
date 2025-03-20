@@ -327,6 +327,8 @@
             border-radius: 5px;
             position: relative;
             display: none;
+            opacity: 1;
+            transition: opacity 0.4s ease;
         }
         
         .project-section {
@@ -1539,7 +1541,7 @@
                             </div>
                             <div class="step">
                                 <div class="step-number" data-step="3">3</div>
-                                <div class="step-title">Development</div>
+                                <div class="step-title">Design Development</div>
                             </div>
                             <div class="step">
                                 <div class="step-number" data-step="4">4</div>
@@ -1547,7 +1549,7 @@
                             </div>
                             <div class="step">
                                 <div class="step-number" data-step="5">5</div>
-                                <div class="step-title">Documentation</div>
+                                <div class="step-title">Construction Documentation</div>
                             </div>
                             <div class="step">
                                 <div class="step-number" data-step="6">6</div>
@@ -1615,7 +1617,7 @@
                         </div>
                         
                         <div id="step-5" class="step-content">
-                            <h3>Stage 5: Documentation</h3>
+                            <h3>Stage 5: Construction Documentation</h3>
                             <p>With the design fully resolved, we prepare comprehensive documentation for building permits, contractor bidding, and construction.</p>
                             <p>Documentation includes:</p>
                             <ul>
@@ -1644,7 +1646,6 @@
                             <p>Our continued involvement during construction provides peace of mind and ensures that the finished project truly reflects the design intent and quality you expect.</p>
                         </div>
                     </div>
-                    
                     <!-- Testimonials section - fixed styling -->
                     <div class="testimonials">
                         <h2 style="margin-bottom: 30px;">What Our Clients Say</h2>
@@ -1750,21 +1751,20 @@
                     <div class="value-statement">
                         <h3>Investment in Enduring Value</h3>
                         <p>Research shows that architect-designed homes appreciate 1.2% faster annually than non-architect homes. For a median-priced Melbourne home, this represents approximately $256,000 in added value over ten years. Beyond this financial benefit, our services create living spaces that enhance your daily experience and wellbeing.</p>
-                        <p class="value-citation">Source: University of Melbourne and ArchiTeam Cooperative, 2023 Residential Architecture Value Study</p>
+                        <p class="value-citation" style="font-size: 0.6em;">Source: University of Melbourne and ArchiTeam Cooperative, 2023 Residential Architecture Value Study</p>
                     </div>
                     
                     <!-- Discovery Package - Enhanced description -->
                     <div class="discovery-package">
                         <h2 class="discovery-title">Discovery Package</h2>
                         <div class="discovery-price">$2,475 + GST <span style="font-size: 16px; font-weight: normal;">(Metro Melbourne)</span></div>
-                        <p>We offer a structured first step to explore your project's potential before committing to a full design. For a fixed fee, you'll receive a hand sketch and a strategic framework tailored to your site, beautifully presented in a bound document for your reference. This package allows both of us to assess whether we're the right fit for your project, with no pressure to make immediate decisions.</p>
+                        <p>A structured first step to explore your project's potential. Receive a comprehensive assessment and strategic framework tailored to your site, presented in a bound document. This allows us to establish alignment before committing to a full design.</p>
                         
                         <div class="discovery-features">
                             <h4>What's Included:</h4>
                             <ul>
-                                <li>Vision & lifestyle assessment to understand your needs</li>
-                                <li>Comprehensive site analysis and assessment</li>
-                                <li>Planning and building regulation review</li>
+                                <li>Vision & lifestyle assessment</li>
+                                <li>Site analysis and planning review</li>
                                 <li>Preliminary sketch concepts</li>
                                 <li>Budget discussion and feasibility</li>
                             </ul>
@@ -1780,80 +1780,45 @@
                         <p>Following project commencement, we'll provide a personalised fee proposal tailored to your specific requirements and scope.</p>
                     </div>
                     
-                    <!-- Standardized fee structure presentation with equal visual weight -->
-                    <div class="service-tiers">
-                        <div class="service-tier">
-                            <div class="tier-header">
-                                <h3 class="tier-name">Small Projects</h3>
-                            </div>
-                            <div class="tier-body">
-                                <div class="tier-percentage">15%</div>
-                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
-                                <div class="tier-description" style="text-align: center;">
-                                    < 80 sqm
-                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
-                                        <div>One or two rooms</div>
-                                        <div>Apartments</div>
-                                        <div>Unique spaces</div>
-                                        <div>Kitchen renovations</div>
-                                    </div>
-                                </div>
-                                <div class="tier-cta">
-                                    <a href="#" class="btn" data-page="contact-page">Get Started</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-tier">
-                            <div class="tier-header">
-                                <h3 class="tier-name">Medium Projects</h3>
-                            </div>
-                            <div class="tier-body">
-                                <div class="tier-percentage">12%</div>
-                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
-                                <div class="tier-description" style="text-align: center;">
-                                    80–120 sqm
-                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
-                                        <div>Extensions</div>
-                                        <div>Alterations</div>
-                                        <div>Renovations</div>
-                                        <div>Partial rebuilds</div>
-                                    </div>
-                                </div>
-                                <div class="tier-cta">
-                                    <a href="#" class="btn" data-page="contact-page">Get Started</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="service-tier">
-                            <div class="tier-header">
-                                <h3 class="tier-name">Large Projects</h3>
-                            </div>
-                            <div class="tier-body">
-                                <div class="tier-percentage">10%</div>
-                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
-                                <div class="tier-description" style="text-align: center;">
-                                    120+ sqm
-                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
-                                        <div>New homes</div>
-                                        <div>Major renovations</div>
-                                        <div>Complex projects</div>
-                                        <div>Complete rebuilds</div>
-                                    </div>
-                                </div>
-                                <div class="tier-cta">
-                                    <a href="#" class="btn" data-page="contact-page">Get Started</a>
-                                </div>
-                            </div>
+                    <!-- Simplified fee structure based on reference image -->
+                    <div style="margin: 40px auto; max-width: 800px;">
+                        <table style="width: 100%; border-collapse: collapse; background-color: #f9f9f9; border-radius: 8px; overflow: hidden;">
+                            <thead>
+                                <tr style="background-color: #f0f0f0;">
+                                    <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 1px solid #ddd;">Project Type</th>
+                                    <th style="padding: 15px; text-align: left; font-weight: 600; border-bottom: 1px solid #ddd;">Fee Range</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">Discovery Package</td>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">$2,475 + GST (Melbourne metro)<br>+$600 for regional Victoria</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">Projects under $500K</td>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">15% of construction cost</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">Projects $500K - $2M</td>
+                                    <td style="padding: 15px; border-bottom: 1px solid #ddd;">10% of construction cost</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 15px;">Projects over $2M</td>
+                                    <td style="padding: 15px;">Custom fee structure</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="text-align: center; margin-top: 30px;">
+                            <a href="#" class="btn" data-page="contact-page">Get Started</a>
                         </div>
                     </div>
                     
                     <!-- Example calculation added -->
                     <div style="margin: 40px auto; max-width: 800px; text-align: center; background-color: var(--light-bg); padding: 30px; border-radius: 8px;">
                         <h4>Example Fee Calculation</h4>
-                        <p>For a medium-sized renovation of 100 square metres with a construction budget of $600,000:</p>
-                        <p style="font-weight: 600; margin-top: 15px;">$600,000 (build cost) × 12% (fee percentage) = $72,000 architectural fee</p>
+                        <p>For a large renovation project with a construction budget of $1.8 million:</p>
+                        <p style="font-weight: 600; margin-top: 15px;">$1,800,000 (build cost) × 10% (fee percentage) = $180,000 architectural fee</p>
+                        <p style="margin-top: 15px; font-style: italic;">Our fees include time onsite during construction. Enquire for more details about our site presence services.</p>
                     </div>
                     
                     <!-- Minimum fee note as universal disclaimer -->
@@ -1992,472 +1957,4 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="footer-bottom">
-                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-        </div>
-        
-        <!-- CONTACT PAGE -->
-        <div id="contact-page" class="page">
-            <header class="header">
-                <div class="container nav-container">
-                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
-                    <ul class="nav-links">
-                        <li><a href="#" data-page="home-page">Home</a></li>
-                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
-                        <li><a href="#" data-page="approach-page">Approach</a></li>
-                        <li><a href="#" data-page="services-page">Services</a></li>
-                        <li><a href="#" data-page="about-page">About</a></li>
-                        <li><a href="#" class="active" data-page="contact-page">Contact</a></li>
-                    </ul>
-                </div>
-            </header>
-            
-            <section class="section">
-                <div class="container">
-                    <h1 class="section-title">Get in Touch</h1>
-                    
-                    <div class="contact-grid">
-                        <div class="contact-form">
-                            <h3 style="margin-bottom: 20px;">Project Enquiry</h3>
-                            <form id="contact-form">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Name*</label>
-                                    <input type="text" id="name" class="form-control" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Email*</label>
-                                    <input type="email" id="email" class="form-control" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="phone" class="form-label">Phone</label>
-                                    <input type="tel" id="phone" class="form-control">
-                                </div>
-                                
-                                <div class="form-section">
-                                    <h4 class="form-section-title">About Your Project</h4>
-                                    
-                                    <div class="form-group">
-                                        <label class="form-label">Project Type</label>
-                                        <div class="form-radio-group">
-                                            <div class="form-radio-item">
-                                                <input type="radio" id="type-new" name="project-type" value="new-build">
-                                                <label for="type-new">New Build</label>
-                                            </div>
-                                            <div class="form-radio-item">
-                                                <input type="radio" id="type-extension" name="project-type" value="extension">
-                                                <label for="type-extension">Extension</label>
-                                            </div>
-                                            <div class="form-radio-item">
-                                                <input type="radio" id="type-renovation" name="project-type" value="renovation">
-                                                <label for="type-renovation">Renovation</label>
-                                            </div>
-                                            <div class="form-radio-item">
-                                                <input type="radio" id="type-other" name="project-type" value="other">
-                                                <label for="type-other">Other</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="location" class="form-label">Project Location</label>
-                                        <input type="text" id="location" class="form-control">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="budget" class="form-label">Investment Range</label>
-                                        <select id="budget" class="form-control">
-                                            <option value="">Select range</option>
-                                            <option value="under-500k">Under $500K</option>
-                                            <option value="500k-750k">$500K - $750K</option>
-                                            <option value="750k-1m">$750K - $1M</option>
-                                            <option value="1m-1.5m">$1M - $1.5M</option>
-                                            <option value="1.5m-2m">$1.5M - $2M</option>
-                                            <option value="over-2m">Over $2M</option>
-                                            <option value="not-sure">Not sure yet</option>
-                                        </select>
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="timeline" class="form-label">Project Timeline</label>
-                                        <select id="timeline" class="form-control">
-                                            <option value="">Select timeline</option>
-                                            <option value="asap">Ready to start ASAP</option>
-                                            <option value="1-3-months">1-3 months</option>
-                                            <option value="3-6-months">3-6 months</option>
-                                            <option value="6-12-months">6-12 months</option>
-                                            <option value="12-months-plus">12+ months</option>
-                                            <option value="exploring">Just exploring options</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="message" class="form-label">Tell us about your project and what you hope to achieve</label>
-                                    <textarea id="message" class="form-control" rows="5"></textarea>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="referral" class="form-label">How did you hear about us?</label>
-                                    <select id="referral" class="form-control">
-                                        <option value="">Select option</option>
-                                        <option value="google">Google Search</option>
-                                        <option value="instagram">Instagram</option>
-                                        <option value="pinterest">Pinterest</option>
-                                        <option value="referral">Referral from friend/family</option>
-                                        <option value="past-client">Past client</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                
-                                <button type="submit" class="btn" style="width: 100%;">Submit Enquiry</button>
-                            </form>
-                        </div>
-                        
-                        <div>
-                            <!-- Contact info in gray box -->
-                            <div class="contact-info">
-                                <h3 style="margin-bottom: 30px;">Contact Information</h3>
-                                
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Location</h4>
-                                        <p>Based in Toorak, Melbourne</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="contact-text">
-                                        <h4>Email</h4>
-                                        <p>info@grovestudio.au</p>
-                                        <p>We aim to respond to all enquiries within 48 hours.</p>
-                                    </div>
-                                </div>
-                                
-                                <!-- Added visual element for balance -->
-                                <div class="contact-visual">
-                                    <img src="images/assets_project1_image2.jpg" alt="Materials and textures from our projects" style="width: 100%; height: auto;">
-                                    <p style="font-style: italic; font-size: 0.9rem; margin-top: 10px; text-align: center;">Materials from recent projects</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-            <footer class="footer">
-                <div class="container">
-                    <div class="footer-content">
-                        <div class="footer-column">
-                            <h4 class="footer-title">Grove Studio</h4>
-                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
-                        </div>
-                        <div class="footer-column">
-                            <h4 class="footer-title">Navigation</h4>
-                            <ul class="footer-links">
-                                <li><a href="#" data-page="home-page">Home</a></li>
-                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
-                                <li><a href="#" data-page="approach-page">Approach</a></li>
-                                <li><a href="#" data-page="services-page">Services</a></li>
-                                <li><a href="#" data-page="about-page">About</a></li>
-                                <li><a href="#" data-page="contact-page">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4 class="footer-title">Connect</h4>
-                            <ul class="footer-links">
-                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
-                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                            </ul>
-                        </div>
-                        <div class="footer-column">
-                            <h4 class="footer-title">Contact</h4>
-                            <ul class="footer-links">
-                                <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.au</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="footer-bottom">
-                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-        </div>
-    </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // ==============================
-        // PAGE NAVIGATION
-        // ==============================
-        const navLinks = document.querySelectorAll('a[data-page]');
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        const portfolioLinks = document.querySelectorAll('.portfolio-link');
-        const projectLinks = document.querySelectorAll('.project-nav-link');
-        const portfolioBackLinks = document.querySelectorAll('.portfolio-back');
-        
-        // Handle standard page navigation
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get the target page
-                const targetPage = this.getAttribute('data-page');
-                
-                // Hide all pages
-                document.querySelectorAll('.page').forEach(page => {
-                    page.classList.remove('active-page');
-                });
-                
-                // Show the target page
-                document.getElementById(targetPage).classList.add('active-page');
-                
-                // Update active link in navigation
-                document.querySelectorAll('.nav-links a').forEach(navLink => {
-                    navLink.classList.remove('active');
-                });
-                
-                // Add active class to current page link
-                document.querySelectorAll(`.nav-links a[data-page="${targetPage}"]`).forEach(navLink => {
-                    if (!navLink.classList.contains('btn')) {
-                        navLink.classList.add('active');
-                    }
-                });
-                
-                // Hide any open project details
-                document.querySelectorAll('.project-detail').forEach(detail => {
-                    detail.style.display = 'none';
-                });
-                
-                // Scroll to top of page
-                window.scrollTo(0, 0);
-            });
-        });
-        
-        // ==============================
-        // PORTFOLIO ITEMS
-        // ==============================
-        
-        // Portfolio filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        if (filterButtons.length) {
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active');
-                    
-                    // Get filter value
-                    const filterValue = this.getAttribute('data-filter');
-                    
-                    // Filter portfolio items
-                    portfolioItems.forEach(item => {
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        }
-        
-        // Make entire portfolio item clickable - Fixed functionality
-        portfolioItems.forEach(item => {
-            item.addEventListener('click', function(e) {
-                // Prevent default if clicking on a link inside the item
-                if (e.target.tagName === 'A') return;
-                
-                const projectId = this.getAttribute('data-project');
-                if (projectId) {
-                    // Hide all project details
-                    document.querySelectorAll('.project-detail').forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show the selected project detail
-                    const projectDetail = document.getElementById(`${projectId}-detail`);
-                    if (projectDetail) {
-                        projectDetail.style.display = 'block';
-                        
-                        // Scroll to project detail
-                        projectDetail.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-        
-        // Portfolio link handling (for "View Project" links)
-        portfolioLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const projectId = this.getAttribute('data-project');
-                if (projectId) {
-                    // Hide all project details
-                    document.querySelectorAll('.project-detail').forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show the selected project detail
-                    const projectDetail = document.getElementById(`${projectId}-detail`);
-                    if (projectDetail) {
-                        projectDetail.style.display = 'block';
-                        
-                        // Scroll to project detail
-                        projectDetail.scrollIntoView({ behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-        
-        // Back to portfolio button
-        if (portfolioBackLinks.length) {
-            portfolioBackLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Hide all project details
-                    document.querySelectorAll('.project-detail').forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Scroll back to portfolio grid
-                    document.querySelector('.portfolio-grid').scrollIntoView({ behavior: 'smooth' });
-                });
-            });
-        }
-        
-        // Project navigation (next/previous links)
-        if (projectLinks.length) {
-            projectLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Get the target project
-                    const targetProject = this.getAttribute('data-project');
-                    
-                    // Hide all project details
-                    document.querySelectorAll('.project-detail').forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show the target project detail
-                    const targetDetail = document.getElementById(`${targetProject}-detail`);
-                    if (targetDetail) {
-                        targetDetail.style.display = 'block';
-                        
-                        // Scroll to target project detail
-                        targetDetail.scrollIntoView({ behavior: 'smooth' });
-                    }
-                });
-            });
-        }
-        
-        // ==============================
-        // APPROACH PAGE
-        // ==============================
-        // Process steps interaction
-        const stepNumbers = document.querySelectorAll('.step-number');
-        const stepContents = document.querySelectorAll('.step-content');
-        
-        if (stepNumbers.length) {
-            stepNumbers.forEach(step => {
-                step.addEventListener('click', function() {
-                    const stepNum = this.getAttribute('data-step');
-                    
-                    // Hide all step contents
-                    stepContents.forEach(content => {
-                        content.classList.remove('active');
-                    });
-                    
-                    // Show the selected step content
-                    document.getElementById(`step-${stepNum}`).classList.add('active');
-                    
-                    // Update active state for step numbers
-                    stepNumbers.forEach(num => {
-                        num.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                });
-            });
-        }
-        
-        // Testimonials navigation with dots
-        const testimonialDots = document.querySelectorAll('.testimonial-dot');
-        const testimonials = document.querySelectorAll('.testimonial-quote');
-        
-        if (testimonialDots.length) {
-            testimonialDots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const testimonialNum = this.getAttribute('data-testimonial');
-                    
-                    // Hide all testimonials
-                    testimonials.forEach(testimonial => {
-                        testimonial.classList.remove('active');
-                    });
-                    
-                    // Show the selected testimonial
-                    document.getElementById(`testimonial-${testimonialNum}`).classList.add('active');
-                    
-                    // Update active state for dots
-                    testimonialDots.forEach(d => {
-                        d.classList.remove('active');
-                    });
-                    
-                    this.classList.add('active');
-                });
-            });
-        }
-        
-        // ==============================
-        // CONTACT FORM
-        // ==============================
-        const contactForm = document.getElementById('contact-form');
-        
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would normally handle form submission via AJAX
-                // For this demo, we'll just show an alert
-                alert('Thank you for your enquiry! We will be in touch soon.');
-                contactForm.reset();
-            });
-        }
-        
-        // GIF hover effect for portfolio thumbnails
-        const portfolioImages = document.querySelectorAll('.portfolio-image');
-        
-        portfolioImages.forEach(image => {
-            const projectId = image.getAttribute('data-project');
-            if (!projectId) return;
-            
-            const staticSrc = image.style.backgroundImage;
-            const gifSrc = `url('gifs/${projectId}-house1.gif')`;
-            
-            image.addEventListener('mouseenter', () => {
-                image.style.backgroundImage = gifSrc;
-            });
-            
-            image.addEventListener('mouseleave', () => {
-                image.style.backgroundImage = staticSrc;
-            });
-        });
-    });
-    </script>
-</body>
-</html>
+                    <div class="footer
