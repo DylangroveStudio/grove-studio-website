@@ -147,7 +147,7 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 50%;
+            width: 55%; /* Increased from 50% based on UX assessment */
             height: 100%;
             background-color: var(--dark-bg);
             background-image: url('images/hero-image.jpg');
@@ -158,7 +158,7 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            margin-left: 55%;
+            margin-left: 58%; /* Adjusted to accommodate wider image */
             max-width: 500px;
         }
         
@@ -497,7 +497,7 @@
         }
         
         .testimonials {
-            background-color: var(--medium-bg);
+            background-color: var(--light-bg);
             padding: 40px;
             margin-top: 60px;
             text-align: center;
@@ -512,10 +512,31 @@
             max-width: 800px;
             margin: 0 auto;
             display: none; /* Hide all testimonials initially */
+            min-height: 150px; /* Fixed height to prevent footer jumping */
         }
         
         .testimonial-quote.active {
             display: block;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--dark-bg);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--accent-color);
         }
         
         /* Services Page */
@@ -529,11 +550,11 @@
             display: flex;
             justify-content: space-between;
             margin-top: 40px;
+            gap: 30px;
         }
         
         .service-tier {
             flex: 1;
-            margin: 0 15px;
             background-color: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
@@ -577,18 +598,6 @@
         .tier-cta {
             text-align: center;
             margin-top: 30px;
-        }
-        
-        .tier-premium {
-            flex: 1.1;
-            margin-top: -20px;
-            margin-bottom: -20px;
-        }
-        
-        .tier-premium .tier-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 30px 20px;
         }
         
         .equal-attention {
@@ -711,9 +720,10 @@
         
         .discovery-call-info {
             margin-top: 30px;
-            background-color: var(--light-bg);
+            background-color: white;
             padding: 20px;
             border-radius: 4px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
         .discovery-call-info h4 {
@@ -823,6 +833,25 @@
             display: none;
         }
         
+        /* Value statement box */
+        .value-statement {
+            background-color: var(--medium-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .value-statement h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-statement p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .hero-image {
@@ -856,11 +885,6 @@
             
             .service-tier {
                 margin: 15px 0;
-            }
-            
-            .tier-premium {
-                margin-top: 15px;
-                margin-bottom: 15px;
             }
         }
         
@@ -993,7 +1017,8 @@
                             <a href="#" class="btn" data-page="approach-page">Explore Our Process</a>
                         </div>
                         <div>
-                            <img src="images/approach-preview.jpg" alt="Our Approach" style="width:100%; height:300px; object-fit:cover;">
+                            <!-- Fixed: Using GIF instead of static image -->
+                            <img src="gifs/our-approach-GIF.gif" alt="Our Approach" style="width:100%; height:300px; object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -1007,6 +1032,7 @@
                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
                 </div>
             </section>
+            
             <!-- Footer -->
             <footer class="footer">
                 <div class="container">
@@ -1031,14 +1057,14 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                                <!-- Removed Houzz as requested -->
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li> <!-- Fixed: Removed .com -->
                             </ul>
                         </div>
                     </div>
@@ -1048,7 +1074,6 @@
                 </div>
             </footer>
         </div>
-        
         <!-- PORTFOLIO PAGE -->
         <div id="portfolio-page" class="page">
             <!-- Header (same across all pages) -->
@@ -1227,14 +1252,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1266,7 +1290,8 @@
                     <h1 class="section-title">Our Approach</h1>
                     <div class="process-intro">
                         <h3>A Transparent Process Built Around Your Vision</h3>
-                        <p>Clear communication consistently ranks as clients' most valued quality in an architect. Our structured yet flexible process keeps you informed at every stage while ensuring your vision guides all design decisions. We've developed this approach specifically to make the journey from concept to completion as stress-free and enjoyable as possible.</p>
+                        <!-- Revised copy based on target demographic research -->
+                        <p>Research shows that established professionals value transparent communication above all other qualities in their architect. Our structured yet adaptable process prioritizes clear dialogue at every stage, ensuring your personal vision guides all design decisions. We've developed this approach to transform what might otherwise be a complex journey into an engaging and rewarding experience.</p>
                         
                         <!-- Process Animation -->
                         <div class="process-animation">
@@ -1372,7 +1397,8 @@
                         </div>
                     </div>
                     
-                    <div class="testimonials">
+                    <!-- Testimonials section - removed background color and fixed styling -->
+                    <div class="testimonials" style="background-color: transparent;">
                         <h2 style="margin-bottom: 30px;">What Our Clients Say</h2>
                         <div id="testimonial-1" class="testimonial-quote active">
                             <p>"We are so glad we trusted his design vision. Our home both looks and feels incredible."</p>
@@ -1392,6 +1418,14 @@
                         <div id="testimonial-4" class="testimonial-quote">
                             <p>"He's not an architect who designs just for the sake of a beautiful design, he greatly considers the people who will be living in it and bringing it to life. When he presented us with the final design, we felt an overwhelming sense that Dylan had created something that was truly 'us'."</p>
                             <p class="testimonial-author">— Kate and Josh, Homeowners, Brisbane</p>
+                        </div>
+                        
+                        <!-- Added manual navigation controls for testimonials -->
+                        <div class="testimonial-controls">
+                            <div class="testimonial-dot active" data-testimonial="1"></div>
+                            <div class="testimonial-dot" data-testimonial="2"></div>
+                            <div class="testimonial-dot" data-testimonial="3"></div>
+                            <div class="testimonial-dot" data-testimonial="4"></div>
                         </div>
                     </div>
                 </div>
@@ -1420,14 +1454,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1458,11 +1491,17 @@
                 <div class="container">
                     <h1 class="section-title">Services & Fees</h1>
                     
+                    <!-- Value statement moved to the top of the page -->
+                    <div class="value-statement">
+                        <h3>Investment in Enduring Value</h3>
+                        <p>Research shows that architect-designed homes appreciate 1.2% faster annually than non-architect homes. For a median-priced Melbourne home, this represents approximately $256,000 in added value over ten years. Beyond this financial benefit, our services create living spaces that enhance your daily experience and wellbeing.</p>
+                    </div>
+                    
                     <!-- Discovery Package - Moved to top as requested -->
                     <div class="discovery-package">
                         <h2 class="discovery-title">Discovery Package</h2>
                         <div class="discovery-price">$2,475 + GST <span style="font-size: 16px; font-weight: normal;">(Metro Melbourne)</span></div>
-                        <p>Our fixed-fee Discovery Package is ideal for homeowners in the early stages of planning. It helps clarify your vision and provides a solid foundation for your project.</p>
+                        <p>We offer a structured first step to explore your project's potential before committing to a full design. For a fixed fee, you'll receive a hand sketch and a strategic framework tailored to your site.</p>
                         
                         <div class="discovery-features">
                             <h4>What's Included:</h4>
@@ -1475,17 +1514,12 @@
                             </ul>
                         </div>
                         
-                        <p class="discovery-note">The fee for this package can be credited toward full architectural services if you proceed with your project.</p>
+                        <!-- Removed credit line as requested -->
                         
                         <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Book Your Discovery Package</a>
                     </div>
                     
-                    <div class="services-intro">
-                        <h3>Investment in Enduring Value</h3>
-                        <p>Research shows that architect-designed homes appreciate 1.2% faster annually than non-architect homes. For a median-priced Melbourne home, this represents approximately $256,000 in added value over ten years.</p>
-                        <p>Beyond this financial benefit, our services create living spaces that enhance your daily experience and wellbeing.</p>
-                    </div>
-                    
+                    <!-- Standardized fee structure presentation with equal visual weight -->
                     <div class="service-tiers">
                         <div class="service-tier">
                             <div class="tier-header">
@@ -1493,14 +1527,13 @@
                             </div>
                             <div class="tier-body">
                                 <div class="tier-percentage">15%</div>
-                                <div class="tier-description">
+                                <div class="tier-description" style="text-align: left;">
                                     < 80 sqm
-                                    <ul style="text-align:left; margin-top:10px; list-style-type:disc; padding-left:20px;">
+                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
                                         <li>One or two rooms</li>
                                         <li>Apartments</li>
                                         <li>Unique spaces</li>
                                     </ul>
-                                    <p style="font-style:italic; margin-top:10px; font-size:0.9rem;">Minimum fee: $30,000</p>
                                 </div>
                                 <div class="tier-cta">
                                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
@@ -1508,15 +1541,15 @@
                             </div>
                         </div>
                         
-                        <div class="service-tier tier-premium">
+                        <div class="service-tier">
                             <div class="tier-header">
                                 <h3 class="tier-name">Medium Projects</h3>
                             </div>
                             <div class="tier-body">
                                 <div class="tier-percentage">12%</div>
-                                <div class="tier-description">
+                                <div class="tier-description" style="text-align: left;">
                                     80–120 sqm
-                                    <ul style="text-align:left; margin-top:10px; list-style-type:disc; padding-left:20px;">
+                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
                                         <li>Extensions</li>
                                         <li>Alterations</li>
                                         <li>Renovations</li>
@@ -1533,13 +1566,14 @@
                                 <h3 class="tier-name">Large Projects</h3>
                             </div>
                             <div class="tier-body">
-                                <div class="tier-percentage">Starting from...</div>
-                                <div class="tier-description">
+                                <div class="tier-percentage">10%</div> <!-- Changed from "Starting from..." -->
+                                <div class="tier-description" style="text-align: left;">
                                     120+ sqm
-                                    <ul style="text-align:left; margin-top:10px; list-style-type:disc; padding-left:20px;">
-                                        <li>Get in touch</li>
+                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
+                                        <li>New homes</li>
+                                        <li>Major renovations</li>
+                                        <li>Complex projects</li>
                                     </ul>
-                                    <p style="font-style:italic; margin-top:10px; font-size:0.9rem;">Flexible fee structure based on project scope</p>
                                 </div>
                                 <div class="tier-cta">
                                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
@@ -1548,9 +1582,10 @@
                         </div>
                     </div>
                     
-                    <p class="equal-attention">Every project, no matter its scale, benefits from the same meticulous attention and architectural expertise, ensuring quality and integrity at every stage.</p>
+                    <!-- Minimum fee note moved to universal disclaimer -->
+                    <p class="equal-attention">Every project, no matter its scale, benefits from the same meticulous attention and architectural expertise, ensuring quality and integrity at every stage. Minimum fee of $30,000 applies to all projects.</p>
                     
-                    <div class="consultation-cta">
+                    <div class="consultation-cta" style="text-align: center; margin-top: 40px;">
                         <p>Interested in working together? We tailor every project to your needs.</p>
                         <a href="#" class="btn" data-page="contact-page">Get a Personalised Consultation</a>
                     </div>
@@ -1580,14 +1615,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1597,7 +1631,6 @@
                 </div>
             </footer>
         </div>
-        
         <!-- ABOUT PAGE -->
         <div id="about-page" class="page">
             <header class="header">
@@ -1621,9 +1654,9 @@
                     <div class="about-grid">
                         <div>
                             <h3>Meet Dylan</h3>
-                            <p>Grove Studio was founded by Dylan Grove, an architect with a passion for creating thoughtful, functional spaces that enhance the way people live.</p>
-                            <p>With over 12 years of experience working in award-winning firms across Australia and internationally, Dylan brings a unique perspective to residential architecture that balances aesthetic vision with practical considerations.</p>
-                            <p>Inspired by the principles of Mid-Century Modern design, Dylan's approach focuses on honest material expression, clarity of form, and a strong connection between indoor and outdoor spaces.</p>
+                            <p>Grove Studio was founded by Dylan Grove, a registered architect who brings a warm yet considered perspective to each residential project. With experience across Melbourne's leading practices and international study in Copenhagen, Dylan has developed a distinctive approach that balances refined design with practical intelligence.</p>
+                            <p>His design philosophy combines meticulous attention to detail with an intuitive sense of how spaces should feel, ensuring each home responds authentically to both its occupants and natural context. From heritage transformations to contemporary beach houses, Dylan's work is characterised by its ability to create environments that work as beautifully as they feel.</p>
+                            <p>At the core of Dylan's practice is a commitment to open conversation and collaborative process. This client-centered approach ensures every project truly reflects the people who live in them, creating homes that enhance daily life and wellbeing.</p>
                         </div>
                         <div class="portrait-container">
                             <img src="images/dylan-portrait.jpg" alt="Dylan Grove" class="portrait">
@@ -1634,18 +1667,18 @@
                         <div class="credentials">
                             <h3>Credentials</h3>
                             <ul>
-                                <li>Master of Architecture, University of Melbourne</li>
-                                <li>Bachelor of Design, University of Queensland</li>
-                                <li>Registered Architect, Architects Registration Board of Victoria</li>
+                                <li>Registered Architect, ARBV #20631</li>
+                                <li>Masters of Architecture, RMIT</li>
+                                <li>Royal Danish Academy of Fine Arts, Copenhagen</li>
+                                <li>Bachelor of Architecture, University of Melbourne</li>
                                 <li>Member, Australian Institute of Architects</li>
-                                <li>Certified Passive House Designer</li>
                             </ul>
                         </div>
                         <div class="philosophy">
                             <h3>Philosophy</h3>
                             <p>At Grove Studio, we believe that good design enhances daily life. We create spaces that respond to their context, reflect their inhabitants, and stand the test of time both aesthetically and functionally.</p>
-                            <p>We are committed to sustainable design practices that minimize environmental impact while creating healthy, comfortable living environments.</p>
-                            <p>Every project begins with listening and understanding your unique needs, resulting in spaces that truly feel like home.</p>
+                            <p>Our work is guided by Mid-Century Modern principles - honest expression of materials, connection to landscape, and respect for human scale - while addressing contemporary needs for sustainability and flexibility.</p>
+                            <p>Every project begins with listening, resulting in spaces that feel like authentic extensions of our clients' identities rather than imposed design statements.</p>
                         </div>
                     </div>
                 </div>
@@ -1674,14 +1707,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1762,9 +1794,9 @@
                                     </div>
                                     
                                     <div class="form-group">
-                                        <label for="budget" class="form-label">Estimated Budget</label>
+                                        <label for="budget" class="form-label">Investment Range</label>
                                         <select id="budget" class="form-control">
-                                            <option value="">Select budget range</option>
+                                            <option value="">Select range</option>
                                             <option value="under-500k">Under $500K</option>
                                             <option value="500k-750k">$500K - $750K</option>
                                             <option value="750k-1m">$750K - $1M</option>
@@ -1801,7 +1833,6 @@
                                         <option value="google">Google Search</option>
                                         <option value="instagram">Instagram</option>
                                         <option value="pinterest">Pinterest</option>
-                                        <option value="houzz">Houzz</option>
                                         <option value="referral">Referral from friend/family</option>
                                         <option value="past-client">Past client</option>
                                         <option value="other">Other</option>
@@ -1812,31 +1843,35 @@
                             </form>
                         </div>
                         
-                        <div class="contact-info">
-                            <h3 style="margin-bottom: 30px;">Contact Information</h3>
-                            
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <!-- Contact Info (gray box) now wraps only location and email -->
+                            <div class="contact-info">
+                                <h3 style="margin-bottom: 30px;">Contact Information</h3>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Location</h4>
+                                        <p>Based in Toorak, Melbourne</p>
+                                    </div>
                                 </div>
-                                <div class="contact-text">
-                                    <h4>Location</h4>
-                                    <p>Based in Toorak, Melbourne</p>
+                                
+                                <div class="contact-item">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        <h4>Email</h4>
+                                        <p>info@grovestudio.au</p>
+                                        <p>We aim to respond to all enquiries within 48 hours.</p>
+                                    </div>
                                 </div>
                             </div>
                             
-                            <div class="contact-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Email</h4>
-                                    <p>info@grovestudio.com.au</p>
-                                    <p>We aim to respond to all enquiries within 48 hours.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="discovery-call-info">
+                            <!-- Discovery Call section is now visually separate -->
+                            <div class="discovery-call-info" style="margin-top: 30px;">
                                 <h4>Book a Discovery Call</h4>
                                 <p>A quick chat to understand your project and see if we're a good match. No obligations, just a conversation about your needs and how we might be able to help.</p>
                                 <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Schedule a Call</a>
@@ -1869,14 +1904,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.com.au</li>
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1893,7 +1927,10 @@
         // PAGE NAVIGATION
         // ==============================
         const navLinks = document.querySelectorAll('a[data-page]');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        const portfolioLinks = document.querySelectorAll('.portfolio-link');
         const projectLinks = document.querySelectorAll('.project-nav-link');
+        const portfolioBackLinks = document.querySelectorAll('.portfolio-back');
         
         // Handle standard page navigation
         navLinks.forEach(link => {
@@ -1923,6 +1960,11 @@
                     }
                 });
                 
+                // Hide any open project details
+                document.querySelectorAll('.project-detail').forEach(detail => {
+                    detail.style.display = 'none';
+                });
+                
                 // Scroll to top of page
                 window.scrollTo(0, 0);
             });
@@ -1931,7 +1973,6 @@
         // ==============================
         // PORTFOLIO ITEMS
         // ==============================
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
         
         // Portfolio filtering
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1959,29 +2000,71 @@
             });
         }
         
-        // Make entire portfolio item clickable
+        // Make entire portfolio item clickable - Fixed functionality
         portfolioItems.forEach(item => {
-            item.addEventListener('click', function() {
-                // Navigate to project detail page
+            item.addEventListener('click', function(e) {
+                // Prevent default if clicking on a link inside the item
+                if (e.target.tagName === 'A') return;
+                
                 const projectId = this.getAttribute('data-project');
                 if (projectId) {
-                    // Hide all pages
-                    document.querySelectorAll('.page').forEach(page => {
-                        page.classList.remove('active-page');
+                    // Hide all project details
+                    document.querySelectorAll('.project-detail').forEach(detail => {
+                        detail.style.display = 'none';
                     });
                     
-                    // Show the target project page if it exists
-                    const projectPage = document.getElementById(`${projectId}-page`);
-                    if (projectPage) {
-                        projectPage.classList.add('active-page');
-                        window.scrollTo(0, 0);
-                    } else {
-                        // Fallback to portfolio page if project page not found
-                        document.getElementById('portfolio-page').classList.add('active-page');
+                    // Show the selected project detail
+                    const projectDetail = document.getElementById(`${projectId}-detail`);
+                    if (projectDetail) {
+                        projectDetail.style.display = 'block';
+                        
+                        // Scroll to project detail
+                        projectDetail.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
             });
         });
+        
+        // Portfolio link handling (for "View Project" links)
+        portfolioLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const projectId = this.getAttribute('data-project');
+                if (projectId) {
+                    // Hide all project details
+                    document.querySelectorAll('.project-detail').forEach(detail => {
+                        detail.style.display = 'none';
+                    });
+                    
+                    // Show the selected project detail
+                    const projectDetail = document.getElementById(`${projectId}-detail`);
+                    if (projectDetail) {
+                        projectDetail.style.display = 'block';
+                        
+                        // Scroll to project detail
+                        projectDetail.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+        
+        // Back to portfolio button
+        if (portfolioBackLinks.length) {
+            portfolioBackLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Hide all project details
+                    document.querySelectorAll('.project-detail').forEach(detail => {
+                        detail.style.display = 'none';
+                    });
+                    
+                    // Scroll back to portfolio grid
+                    document.querySelector('.portfolio-grid').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
         
         // Project navigation (next/previous links)
         if (projectLinks.length) {
@@ -1992,16 +2075,19 @@
                     // Get the target project
                     const targetProject = this.getAttribute('data-project');
                     
-                    // Hide all pages
-                    document.querySelectorAll('.page').forEach(page => {
-                        page.classList.remove('active-page');
+                    // Hide all project details
+                    document.querySelectorAll('.project-detail').forEach(detail => {
+                        detail.style.display = 'none';
                     });
                     
-                    // Show the target project page
-                    document.getElementById(`${targetProject}-page`).classList.add('active-page');
-                    
-                    // Scroll to top of page
-                    window.scrollTo(0, 0);
+                    // Show the target project detail
+                    const targetDetail = document.getElementById(`${targetProject}-detail`);
+                    if (targetDetail) {
+                        targetDetail.style.display = 'block';
+                        
+                        // Scroll to target project detail
+                        targetDetail.scrollIntoView({ behavior: 'smooth' });
+                    }
                 });
             });
         }
@@ -2036,24 +2122,31 @@
             });
         }
         
-        // Testimonials carousel
+        // Testimonials navigation
+        const testimonialDots = document.querySelectorAll('.testimonial-dot');
         const testimonials = document.querySelectorAll('.testimonial-quote');
-        let currentTestimonial = 0;
         
-        function nextTestimonial() {
-            // Hide current testimonial
-            testimonials[currentTestimonial].classList.remove('active');
-            
-            // Update current testimonial index
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            
-            // Show next testimonial
-            testimonials[currentTestimonial].classList.add('active');
-        }
-        
-        if (testimonials.length > 1) {
-            // Start testimonial rotation if there are testimonials
-            setInterval(nextTestimonial, 8000); // Change testimonial every 8 seconds
+        if (testimonialDots.length) {
+            testimonialDots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const testimonialNum = this.getAttribute('data-testimonial');
+                    
+                    // Hide all testimonials
+                    testimonials.forEach(testimonial => {
+                        testimonial.classList.remove('active');
+                    });
+                    
+                    // Show the selected testimonial
+                    document.getElementById(`testimonial-${testimonialNum}`).classList.add('active');
+                    
+                    // Update active state for dots
+                    testimonialDots.forEach(d => {
+                        d.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                });
+            });
         }
         
         // ==============================
