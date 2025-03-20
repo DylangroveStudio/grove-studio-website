@@ -894,6 +894,20 @@
             margin-right: 5px;
         }
         
+        /* Page Display */
+        .page {
+            display: none;
+        }
+        
+        .page.active-page {
+            display: block;
+        }
+        
+        /* Project Details */
+        .project-details-page {
+            display: none;
+        }
+        
         /* Responsive */
         @media (max-width: 992px) {
             .hero-image {
@@ -1036,3 +1050,1461 @@
                         </div>
                     </div>
                 </div>
+            </section>
+            
+            <!-- Signature Approach -->
+            <section class="section" style="background-color: var(--medium-bg);">
+                <div class="container">
+                    <h2 class="section-title">Our Signature Approach</h2>
+                    <div class="about-grid">
+                        <div>
+                            <p>At Grove Studio, we believe in a design process that combines Mid-Century Modern principles with contemporary functionality. Our approach focuses on:</p>
+                            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                                <li>Thoughtful space planning that prioritizes natural light and flow</li>
+                                <li>Honest expression of materials and structural elements</li>
+                                <li>Integration with the surrounding landscape and environment</li>
+                                <li>Attention to the human scale and tactile qualities</li>
+                            </ul>
+                            <a href="#" class="btn" data-page="approach-page">Explore Our Process</a>
+                        </div>
+                        <div>
+                            <img src="images/approach-preview.jpg" alt="Our Approach" style="width:100%; height:300px; object-fit:cover;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Call to Action -->
+            <section class="section">
+                <div class="container" style="text-align: center;">
+                    <h2 class="section-title">Ready to Transform Your Space?</h2>
+                    <p style="max-width: 700px; margin: 0 auto 30px;">Book a discovery call to discuss your project needs and explore how we can help bring your vision to life.</p>
+                    <a href="#" class="btn" data-page="contact-page">Get Started</a>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- PORTFOLIO PAGE -->
+        <div id="portfolio-page" class="page">
+            <!-- Header (same across all pages) -->
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" class="active" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <!-- Portfolio Section -->
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Our Portfolio</h1>
+                    <div class="portfolio-intro">
+                        <p>Explore our collection of thoughtfully designed spaces that embody our commitment to modern design principles, functionality, and timeless elegance.</p>
+                    </div>
+                    
+                    <div class="portfolio-filters">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="residential">Residential</button>
+                        <button class="filter-btn" data-filter="extension">Extensions</button>
+                        <button class="filter-btn" data-filter="interior">Interiors</button>
+                    </div>
+                    
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item" data-category="residential" data-project="shoreham-house">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project1_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Shoreham House</h3>
+                                <p>MCM-inspired residential transformation</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="residential" data-project="black-rock-house">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project2_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Black Rock House</h3>
+                                <p>Coastal home with modern influences</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="extension" data-project="sassafras-house">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project3_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Sassafras House</h3>
+                                <p>Heritage extension with contemporary elements</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="interior" data-project="brighton-apartment">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project4_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Brighton Apartment</h3>
+                                <p>Luxury interior renovation</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="residential" data-project="waikanae-house">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project5_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Waikanae House</h3>
+                                <p>Sustainable passive design</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-item" data-category="extension" data-project="malvern-east-extension">
+                            <div class="portfolio-image" style="background-image: url('images/assets_project6_image1.jpg');"></div>
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Malvern East Extension</h3>
+                                <p>Seamless integration of old and new</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer (same across all pages) -->
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- PROJECT DETAILS: SHOREHAM HOUSE -->
+        <div id="shoreham-house-page" class="page project-details-page">
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" class="active" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <section class="section">
+                <div class="container">
+                    <div style="margin-bottom: 20px;">
+                        <a href="#" data-page="portfolio-page" style="display: flex; align-items: center;">
+                            <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                        </a>
+                    </div>
+                    
+                    <h1 class="section-title">Shoreham House</h1>
+                    
+                    <div class="project-detail">
+                        <div class="project-section">
+                            <h3 class="project-section-title">Project Overview</h3>
+                            <p>This beachside residence drew inspiration from mid-century modernist principles while responding to the coastal environment. The client wanted a space that would accommodate their growing family while maximizing views and natural light.</p>
+                        </div>
+                        
+                        <div class="project-gif-container">
+                            <img src="images/shoreham_gif.gif" alt="Shoreham House Transformation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h3 class="project-section-title">Design Approach</h3>
+                            <p>Our design embraced the sloping site by creating a split-level layout that follows the natural contours of the land. The material palette features timber cladding, exposed concrete, and large expanses of glass to frame coastal views.</p>
+                            
+                            <div class="project-image-gallery">
+                                <img src="images/assets_project1_image2.jpg" alt="Shoreham House Living Area" class="gallery-image">
+                                <img src="images/assets_project1_image3.jpg" alt="Shoreham House Exterior" class="gallery-image">
+                            </div>
+                        </div>
+                        
+                        <div class="project-section">
+                            <h3 class="project-section-title">Key Features</h3>
+                            <ul>
+                                <li>Open-plan living areas with seamless indoor-outdoor connection</li>
+                                <li>North-facing glazing to maximize passive solar gain</li>
+                                <li>Custom timber joinery throughout</li>
+                                <li>Integrated sustainable features including rainwater harvesting</li>
+                                <li>Carefully positioned clerestory windows for natural ventilation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-client-testimonial">
+                            <p>"We are so glad we trusted his design vision. Our home both looks and feels incredible - the way the light changes throughout the day creates a constantly evolving experience that we never tire of."</p>
+                            <p class="testimonial-author">— Verity and Mike, Homeowners, Shoreham</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="malvern-east-extension">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="black-rock-house">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- APPROACH PAGE -->
+        <div id="approach-page" class="page">
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" class="active" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Our Approach</h1>
+                    <div class="process-intro">
+                        <p>At Grove Studio, we believe in a collaborative design process that puts your needs at the center while bringing our expertise to the table. Our approach combines Mid-Century Modern principles with contemporary functionality, creating spaces that are both timeless and practical.</p>
+                    </div>
+                    
+                    <div class="process-animation">
+                        <img src="images/process_animation.gif" alt="Our Design Process" class="centered-gif">
+                    </div>
+                    
+                    <div class="process-steps">
+                        <div class="process-line"></div>
+                        <div class="steps-container">
+                            <div class="step">
+                                <div class="step-number" data-step="1">1</div>
+                                <div class="step-title">Discovery</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="2">2</div>
+                                <div class="step-title">Concept</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="3">3</div>
+                                <div class="step-title">Design</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="4">4</div>
+                                <div class="step-title">Documentation</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number" data-step="5">5</div>
+                                <div class="step-title">Construction</div>
+                            </div>
+                        </div>
+                        
+                        <div id="step-1-content" class="step-content active">
+                            <h3>1. Discovery</h3>
+                            <p>We begin by understanding your vision, lifestyle, and requirements through in-depth conversations and site visits. This phase is about building the foundation of our working relationship and defining the project goals.</p>
+                            <ul>
+                                <li>Initial consultation to discuss your aspirations and requirements</li>
+                                <li>Comprehensive site analysis and assessment</li>
+                                <li>Review of planning and building regulations</li>
+                                <li>Preliminary budget discussion</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-2-content" class="step-content">
+                            <h3>2. Concept</h3>
+                            <p>We translate your brief into spatial concepts, exploring various design options that respond to your site and requirements. This phase focuses on the big ideas and overall direction of the project.</p>
+                            <ul>
+                                <li>Development of spatial planning concepts</li>
+                                <li>Exploration of form, materiality, and architectural language</li>
+                                <li>3D visualization to help you understand the proposed spaces</li>
+                                <li>Feedback sessions to refine the design direction</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-3-content" class="step-content">
+                            <h3>3. Design</h3>
+                            <p>Once the concept is approved, we develop the design in greater detail, resolving spatial relationships, material selections, and technical requirements.</p>
+                            <ul>
+                                <li>Detailed floor plans, elevations, and sections</li>
+                                <li>Material and finishes selections</li>
+                                <li>Integration of structural and building services</li>
+                                <li>Refinement of sustainability strategies</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-4-content" class="step-content">
+                            <h3>4. Documentation</h3>
+                            <p>We prepare comprehensive construction documentation to obtain necessary approvals and enable accurate pricing from builders.</p>
+                            <ul>
+                                <li>Detailed construction drawings</li>
+                                <li>Specifications and schedules</li>
+                                <li>Coordination with engineering consultants</li>
+                                <li>Planning and building permit applications</li>
+                                <li>Builder selection assistance</li>
+                            </ul>
+                        </div>
+                        
+                        <div id="step-5-content" class="step-content">
+                            <h3>5. Construction</h3>
+                            <p>During construction, we act as your advocate, ensuring the design is executed as intended and addressing any issues that arise.</p>
+                            <ul>
+                                <li>Regular site visits to monitor construction quality</li>
+                                <li>Review of shop drawings and samples</li>
+                                <li>Coordination with builders and consultants</li>
+                                <li>Contract administration</li>
+                                <li>Practical completion inspection</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonials">
+                        <h2 style="margin-bottom: 30px;">What Our Clients Say</h2>
+                        
+                        <div id="testimonial-1" class="testimonial-quote active">
+                            <p>"We are so glad we trusted his design vision. Our home both looks and feels incredible."</p>
+                            <p class="testimonial-author">— Verity and Mike, Homeowners, Malvern</p>
+                        </div>
+                        
+                        <div id="testimonial-2" class="testimonial-quote">
+                            <p>"Dylan has a fabulous design eye, from the macro concept down to the perfect drawer handle... He is very easy to work with and spends the time getting to know the client."</p>
+                            <p class="testimonial-author">— Alice Long, Client Advocate and Project Manager, VIC</p>
+                        </div>
+                        
+                        <div id="testimonial-3" class="testimonial-quote">
+                            <p>"We are very thankful to Dylan and recommend him if you have a project that needs a high-end, bespoke finish."</p>
+                            <p class="testimonial-author">— Joel and Paula, Homeowners, Richmond, VIC</p>
+                        </div>
+                        
+                        <div id="testimonial-4" class="testimonial-quote">
+                            <p>"He's not an architect who designs just for the sake of a beautiful design, he greatly considers the people who will be living in it and bringing it to life. When he presented us with the final design, we felt an overwhelming sense that Dylan had created something that was truly 'us'."</p>
+                            <p class="testimonial-author">— Kate and Josh, Homeowners, Brisbane</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- SERVICES PAGE -->
+        <div id="services-page" class="page">
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" class="active" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Our Services</h1>
+                    <div class="services-intro">
+                        <p>Grove Studio provides comprehensive architectural services tailored to your specific project needs. Whether you're planning a new build, extension, or renovation, we're here to guide you through the entire process from concept to completion.</p>
+                    </div>
+                    
+                    <!-- Fee Calculator -->
+                    <div class="fee-calculator">
+                        <h2 class="calculator-heading">Fee Calculator</h2>
+                        <p class="calculator-intro">Use our interactive calculator to estimate architectural fees for your project. Fees are calculated as a percentage of your construction budget and vary based on project complexity, scale, and scope.</p>
+                        
+                        <div class="calculator-grid">
+                            <div class="calculator-category">
+                                <h3 class="category-title">Project Type</h3>
+                                <ul class="options-list" id="project-type-options">
+                                    <li class="option-item" data-value="newBuild">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">New Build</span>
+                                    </li>
+                                    <li class="option-item" data-value="extension">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Extension/Renovation</span>
+                                    </li>
+                                    <li class="option-item" data-value="interiorRenovation">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Interior Renovation</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="calculator-category">
+                                <h3 class="category-title">Project Scale</h3>
+                                <ul class="options-list" id="project-scale-options">
+                                    <li class="option-item" data-value="small">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Small (up to 150 sqm)</span>
+                                    </li>
+                                    <li class="option-item" data-value="medium">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Medium (151-300 sqm)</span>
+                                    </li>
+                                    <li class="option-item" data-value="large">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Large (301+ sqm)</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="calculator-category">
+                                <h3 class="category-title">Complexity</h3>
+                                <ul class="options-list" id="complexity-options">
+                                    <li class="option-item" data-value="standard">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Standard Design</span>
+                                    </li>
+                                    <li class="option-item" data-value="custom">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">Custom Design</span>
+                                    </li>
+                                    <li class="option-item" data-value="highEnd">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">High-End Bespoke</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="calculator-category">
+                                <h3 class="category-title">Budget Range</h3>
+                                <ul class="options-list" id="budget-options">
+                                    <li class="option-item" data-value="400k">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">$400K - $700K</span>
+                                    </li>
+                                    <li class="option-item" data-value="700k">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">$700K - $1.2M</span>
+                                    </li>
+                                    <li class="option-item" data-value="1.2m">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">$1.2M - $2M</span>
+                                    </li>
+                                    <li class="option-item" data-value="2m">
+                                        <span class="option-dot"></span>
+                                        <span class="option-label">$2M+</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="fee-estimate">
+                            <h3 class="fee-estimate-title">Estimated Fee Range</h3>
+                            <div class="fee-percentage" id="fee-percentage">7.5-9.5%</div>
+                            <p class="fee-details">of total construction cost</p>
+                            <p class="fee-note">*Minimum fee of $30,000 applies for small projects</p>
+                        </div>
+                        
+                        <div class="calculator-selections">
+                            <h3 class="selections-title">Your Project Details</h3>
+                            <ul class="selection-list" id="selection-list">
+                                <li class="selection-item">
+                                    <span class="selection-label">Project Type:</span>
+                                    <span class="selection-value" id="selected-type">Please select</span>
+                                </li>
+                                <li class="selection-item">
+                                    <span class="selection-label">Project Scale:</span>
+                                    <span class="selection-value" id="selected-scale">Please select</span>
+                                </li>
+                                <li class="selection-item">
+                                    <span class="selection-label">Complexity:</span>
+                                    <span class="selection-value" id="selected-complexity">Please select</span>
+                                </li>
+                                <li class="selection-item">
+                                    <span class="selection-label">Budget Range:</span>
+                                    <span class="selection-value" id="selected-budget">Please select</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="calculator-cta">
+                            <a href="#" class="btn" id="refine-quote">Refine Your Quote</a>
+                            <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Book a Consultation</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Discovery Package -->
+                    <div class="discovery-package">
+                        <h2 class="discovery-title">Discovery Package</h2>
+                        <div class="discovery-price">$2,475 + GST <span style="font-size: 16px; font-weight: normal;">(Metro Melbourne)</span></div>
+                        <p>Our fixed-fee Discovery Package is ideal for homeowners in the early stages of planning. It helps clarify your vision and provides a solid foundation for your project.</p>
+                        
+                        <div class="discovery-features">
+                            <h4>What's Included:</h4>
+                            <ul>
+                                <li>Vision & lifestyle assessment to understand your needs</li>
+                                <li>Comprehensive site analysis and assessment</li>
+                                <li>Planning and building regulation review</li>
+                                <li>Preliminary sketch concepts</li>
+                                <li>Budget discussion and feasibility</li>
+                            </ul>
+                        </div>
+                        
+                        <p class="discovery-note">The fee for this package can be credited toward full architectural services if you proceed with your project.</p>
+                        
+                        <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Book Your Discovery Package</a>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- ABOUT PAGE -->
+        <div id="about-page" class="page">
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" class="active" data-page="about-page">About</a></li>
+                        <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">About Grove Studio</h1>
+                    
+                    <div class="about-grid">
+                        <div>
+                            <h3>Meet Dylan</h3>
+                            <p>Grove Studio was founded by Dylan Robertson, an architect with a passion for creating thoughtful, functional spaces that enhance the way people live.</p>
+                            <p>With over 12 years of experience working in award-winning firms across Australia and internationally, Dylan brings a unique perspective to residential architecture that balances aesthetic vision with practical considerations.</p>
+                            <p>Inspired by the principles of Mid-Century Modern design, Dylan's approach focuses on honest material expression, clarity of form, and a strong connection between indoor and outdoor spaces.</p>
+                        </div>
+                        <div class="portrait-container">
+                            <img src="images/dylan-portrait.jpg" alt="Dylan Robertson" class="portrait">
+                        </div>
+                    </div>
+                    
+                    <div class="credentials-philosophy">
+                        <div class="credentials">
+                            <h3>Credentials</h3>
+                            <ul>
+                                <li>Master of Architecture, University of Melbourne</li>
+                                <li>Bachelor of Design, University of Queensland</li>
+                                <li>Registered Architect, Architects Registration Board of Victoria</li>
+                                <li>Member, Australian Institute of Architects</li>
+                                <li>Certified Passive House Designer</li>
+                            </ul>
+                        </div>
+                        <div class="philosophy">
+                            <h3>Philosophy</h3>
+                            <p>At Grove Studio, we believe that good design enhances daily life. We create spaces that respond to their context, reflect their inhabitants, and stand the test of time both aesthetically and functionally.</p>
+                            <p>We are committed to sustainable design practices that minimize environmental impact while creating healthy, comfortable living environments.</p>
+                            <p>Every project begins with listening and understanding your unique needs, resulting in spaces that truly feel like home.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        
+        <!-- CONTACT PAGE -->
+        <div id="contact-page" class="page">
+            <header class="header">
+                <div class="container nav-container">
+                    <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+                    <ul class="nav-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" class="active" data-page="contact-page">Contact</a></li>
+                    </ul>
+                </div>
+            </header>
+            
+            <section class="section">
+                <div class="container">
+                    <h1 class="section-title">Get in Touch</h1>
+                    
+                    <div class="contact-grid">
+                        <div class="contact-form">
+                            <h3 style="margin-bottom: 20px;">Project Enquiry</h3>
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">Name*</label>
+                                    <input type="text" id="name" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email" class="form-label">Email*</label>
+                                    <input type="email" id="email" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input type="tel" id="phone" class="form-control">
+                                </div>
+                                
+                                <div class="form-section">
+                                    <h4 class="form-section-title">About Your Project</h4>
+                                    
+                                    <div class="form-group">
+                                        <label class="form-label">Project Type</label>
+                                        <div class="form-radio-group">
+                                            <div class="form-radio-item">
+                                                <input type="radio" id="type-new" name="project-type" value="new-build">
+                                                <label for="type-new">New Build</label>
+                                            </div>
+                                            <div class="form-radio-item">
+                                                <input type="radio" id="type-extension" name="project-type" value="extension">
+                                                <label for="type-extension">Extension</label>
+                                            </div>
+                                            <div class="form-radio-item">
+                                                <input type="radio" id="type-renovation" name="project-type" value="renovation">
+                                                <label for="type-renovation">Renovation</label>
+                                            </div>
+                                            <div class="form-radio-item">
+                                                <input type="radio" id="type-other" name="project-type" value="other">
+                                                <label for="type-other">Other</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="location" class="form-label">Project Location</label>
+                                        <input type="text" id="location" class="form-control">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="budget" class="form-label">Estimated Budget</label>
+                                        <select id="budget" class="form-control">
+                                            <option value="">Select budget range</option>
+                                            <option value="under-500k">Under $500K</option>
+                                            <option value="500k-750k">$500K - $750K</option>
+                                            <option value="750k-1m">$750K - $1M</option>
+                                            <option value="1m-1.5m">$1M - $1.5M</option>
+                                            <option value="1.5m-2m">$1.5M - $2M</option>
+                                            <option value="over-2m">Over $2M</option>
+                                            <option value="not-sure">Not sure yet</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="timeline" class="form-label">Project Timeline</label>
+                                        <select id="timeline" class="form-control">
+                                            <option value="">Select timeline</option>
+                                            <option value="asap">Ready to start ASAP</option>
+                                            <option value="1-3-months">1-3 months</option>
+                                            <option value="3-6-months">3-6 months</option>
+                                            <option value="6-12-months">6-12 months</option>
+                                            <option value="12-months-plus">12+ months</option>
+                                            <option value="exploring">Just exploring options</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message" class="form-label">Tell us about your project and what you hope to achieve</label>
+                                    <textarea id="message" class="form-control" rows="5"></textarea>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="referral" class="form-label">How did you hear about us?</label>
+                                    <select id="referral" class="form-control">
+                                        <option value="">Select option</option>
+                                        <option value="google">Google Search</option>
+                                        <option value="instagram">Instagram</option>
+                                        <option value="pinterest">Pinterest</option>
+                                        <option value="houzz">Houzz</option>
+                                        <option value="referral">Referral from friend/family</option>
+                                        <option value="past-client">Past client</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <button type="submit" class="btn" style="width: 100%;">Submit Enquiry</button>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h3 style="margin-bottom: 30px;">Contact Information</h3>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Location</h4>
+                                    <p>Melbourne, Victoria</p>
+                                    <p>Serving projects throughout Melbourne and surrounding areas.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email</h4>
+                                    <p>info@grovestudio.com.au</p>
+                                    <p>We aim to respond to all enquiries within 48 hours.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Phone</h4>
+                                    <p>+61 412 345 678</p>
+                                    <p>Available Monday to Friday, 9am-5pm AEST</p>
+                                </div>
+                            </div>
+                            
+                            <div class="discovery-call-info">
+                                <h4>Book a Discovery Call</h4>
+                                <p>A quick chat to understand your project and see if we're a good match. No obligations, just a conversation about your needs and how we might be able to help.</p>
+                                <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Schedule a Call</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="footer">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Grove Studio</h4>
+                            <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Navigation</h4>
+                            <ul class="footer-links">
+                                <li><a href="#" data-page="home-page">Home</a></li>
+                                <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                                <li><a href="#" data-page="approach-page">Approach</a></li>
+                                <li><a href="#" data-page="services-page">Services</a></li>
+                                <li><a href="#" data-page="about-page">About</a></li>
+                                <li><a href="#" data-page="contact-page">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Connect</h4>
+                            <ul class="footer-links">
+                                <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                                <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                                <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contact</h4>
+                            <ul class="footer-links">
+                                <li>Melbourne, Australia</li>
+                                <li>info@grovestudio.com.au</li>
+                                <li>+61 412 345 678</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // ==============================
+        // PAGE NAVIGATION
+        // ==============================
+        const navLinks = document.querySelectorAll('a[data-page]');
+        const projectLinks = document.querySelectorAll('.project-nav-link');
+        
+        // Handle standard page navigation
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the target page
+                const targetPage = this.getAttribute('data-page');
+                
+                // Hide all pages
+                document.querySelectorAll('.page').forEach(page => {
+                    page.classList.remove('active-page');
+                });
+                
+                // Show the target page
+                document.getElementById(targetPage).classList.add('active-page');
+                
+                // Update active link in navigation
+                document.querySelectorAll('.nav-links a').forEach(navLink => {
+                    navLink.classList.remove('active');
+                });
+                
+                // Add active class to current page link
+                document.querySelectorAll(`.nav-links a[data-page="${targetPage}"]`).forEach(navLink => {
+                    if (!navLink.classList.contains('btn')) {
+                        navLink.classList.add('active');
+                    }
+                });
+                
+                // Scroll to top of page
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // ==============================
+        // PORTFOLIO ITEMS
+        // ==============================
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        // Portfolio filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        if (filterButtons.length) {
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get filter value
+                    const filterValue = this.getAttribute('data-filter');
+                    
+                    // Filter portfolio items
+                    portfolioItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Make entire portfolio item clickable
+        portfolioItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // Navigate to project detail page
+                const projectId = this.getAttribute('data-project');
+                if (projectId) {
+                    // Hide all pages
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.classList.remove('active-page');
+                    });
+                    
+                    // Show the target project page if it exists
+                    const projectPage = document.getElementById(`${projectId}-page`);
+                    if (projectPage) {
+                        projectPage.classList.add('active-page');
+                        window.scrollTo(0, 0);
+                    } else {
+                        // Fallback to portfolio page if project page not found
+                        document.getElementById('portfolio-page').classList.add('active-page');
+                    }
+                }
+            });
+        });
+        
+        // Project navigation (next/previous links)
+        if (projectLinks.length) {
+            projectLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target project
+                    const targetProject = this.getAttribute('data-project');
+                    
+                    // Hide all pages
+                    document.querySelectorAll('.page').forEach(page => {
+                        page.classList.remove('active-page');
+                    });
+                    
+                    // Show the target project page
+                    document.getElementById(`${targetProject}-page`).classList.add('active-page');
+                    
+                    // Scroll to top of page
+                    window.scrollTo(0, 0);
+                });
+            });
+        }
+        
+        // ==============================
+        // APPROACH PAGE
+        // ==============================
+        // Process steps interaction
+        const stepNumbers = document.querySelectorAll('.step-number');
+        const stepContents = document.querySelectorAll('.step-content');
+        
+        if (stepNumbers.length) {
+            stepNumbers.forEach(step => {
+                step.addEventListener('click', function() {
+                    const stepNum = this.getAttribute('data-step');
+                    
+                    // Hide all step contents
+                    stepContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show the selected step content
+                    document.getElementById(`step-${stepNum}-content`).classList.add('active');
+                    
+                    // Update active state for step numbers
+                    stepNumbers.forEach(num => {
+                        num.classList.remove('active');
+                    });
+                    
+                    this.classList.add('active');
+                });
+            });
+        }
+        
+        // Testimonials carousel
+        const testimonials = document.querySelectorAll('.testimonial-quote');
+        let currentTestimonial = 0;
+        
+        function nextTestimonial() {
+            // Hide current testimonial
+            testimonials[currentTestimonial].classList.remove('active');
+            
+            // Update current testimonial index
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            
+            // Show next testimonial
+            testimonials[currentTestimonial].classList.add('active');
+        }
+        
+        if (testimonials.length > 1) {
+            // Start testimonial rotation if there are testimonials
+            setInterval(nextTestimonial, 8000); // Change testimonial every 8 seconds
+        }
+        
+        // ==============================
+        // FEE CALCULATOR
+        // ==============================
+        const optionItems = document.querySelectorAll('.option-item');
+        const feePercentage = document.getElementById('fee-percentage');
+        const selectedType = document.getElementById('selected-type');
+        const selectedScale = document.getElementById('selected-scale');
+        const selectedComplexity = document.getElementById('selected-complexity');
+        const selectedBudget = document.getElementById('selected-budget');
+        const refineQuoteBtn = document.getElementById('refine-quote');
+        
+        let selections = {
+            projectType: null,
+            projectScale: null,
+            complexity: null,
+            budget: null
+        };
+        
+        if (optionItems.length) {
+            // Update fee estimate based on selections
+            function updateFeeEstimate() {
+                let baseRate = 7.5; // Starting base rate
+                let maxRate = 9.5;  // Starting max rate
+                
+                // Adjust for project type
+                if (selections.projectType === 'newBuild') {
+                    baseRate += 0.5;
+                    maxRate += 0.5;
+                } else if (selections.projectType === 'interiorRenovation') {
+                    baseRate -= 0.5;
+                    maxRate -= 0.5;
+                }
+                
+                // Adjust for complexity
+                if (selections.complexity === 'custom') {
+                    baseRate += 0.5;
+                    maxRate += 0.5;
+                } else if (selections.complexity === 'highEnd') {
+                    baseRate += 1.0;
+                    maxRate += 1.5;
+                }
+                
+                // Adjust for scale
+                if (selections.projectScale === 'small') {
+                    baseRate += 0.5;
+                } else if (selections.projectScale === 'large') {
+                    baseRate -= 0.5;
+                    maxRate -= 0.5;
+                }
+                
+                // Adjust for budget
+                if (selections.budget === '400k') {
+                    baseRate += 0.5;
+                    maxRate += 0.5;
+                } else if (selections.budget === '2m') {
+                    baseRate -= 0.5;
+                    maxRate -= 0.5;
+                }
+                
+                // Ensure rates stay within reasonable bounds
+                baseRate = Math.max(6.5, Math.min(baseRate, 10.5));
+                maxRate = Math.max(baseRate + 1, Math.min(maxRate, 12));
+                
+                // Update the display
+                if (feePercentage) {
+                    feePercentage.textContent = `${baseRate.toFixed(1)}-${maxRate.toFixed(1)}%`;
+                }
+            }
+            
+            // Update display of selected options
+            function updateSelections() {
+                if (!selectedType || !selectedScale || !selectedComplexity || !selectedBudget) return;
+                
+                const typeLabel = selections.projectType ? 
+                    document.querySelector(`#project-type-options .option-item[data-value="${selections.projectType}"] .option-label`).textContent : 
+                    'Please select';
+                selectedType.textContent = typeLabel;
+                
+                const scaleLabel = selections.projectScale ? 
+                    document.querySelector(`#project-scale-options .option-item[data-value="${selections.projectScale}"] .option-label`).textContent : 
+                    'Please select';
+                selectedScale.textContent = scaleLabel;
+                
+                const complexityLabel = selections.complexity ? 
+                    document.querySelector(`#complexity-options .option-item[data-value="${selections.complexity}"] .option-label`).textContent : 
+                    'Please select';
+                selectedComplexity.textContent = complexityLabel;
+                
+                const budgetLabel = selections.budget ? 
+                    document.querySelector(`#budget-options .option-item[data-value="${selections.budget}"] .option-label`).textContent : 
+                    'Please select';
+                selectedBudget.textContent = budgetLabel;
+            }
+            
+            // Add click handlers to all option items
+            optionItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // Get the parent category and value
+                    const category = this.closest('.calculator-category').querySelector('.category-title').textContent.toLowerCase().replace(/\s+/g, '');
+                    const value = this.getAttribute('data-value');
+                    
+                    // Remove selected class from all options in this category
+                    const categoryOptions = this.closest('.options-list').querySelectorAll('.option-item');
+                    categoryOptions.forEach(option => {
+                        option.querySelector('.option-dot').classList.remove('selected');
+                    });
+                    
+                    // Add selected class to this option
+                    this.querySelector('.option-dot').classList.add('selected');
+                    
+                    // Update selections object
+                    if (category.includes('type')) {
+                        selections.projectType = value;
+                    } else if (category.includes('scale')) {
+                        selections.projectScale = value;
+                    } else if (category.includes('complexity')) {
+                        selections.complexity = value;
+                    } else if (category.includes('budget')) {
+                        selections.budget = value;
+                    }
+                    
+                    // Update fee estimate and selections display
+                    updateFeeEstimate();
+                    updateSelections();
+                });
+            });
+            
+            // Reset button
+            if (refineQuoteBtn) {
+                refineQuoteBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Reset selections
+                    selections = {
+                        projectType: null,
+                        projectScale: null,
+                        complexity: null,
+                        budget: null
+                    };
+                    
+                    // Remove selected class from all options
+                    document.querySelectorAll('.option-dot').forEach(dot => {
+                        dot.classList.remove('selected');
+                    });
+                    
+                    // Reset display
+                    if (feePercentage) {
+                        feePercentage.textContent = '7.5-9.5%';
+                    }
+                    updateSelections();
+                });
+            }
+        }
+        
+        // ==============================
+        // CONTACT FORM
+        // ==============================
+        const contactForm = document.getElementById('contact-form');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would normally handle form submission via AJAX
+                // For this demo, we'll just show an alert
+                alert('Thank you for your inquiry! We will be in touch soon.');
+                contactForm.reset();
+            });
+        }
+    });
+</script>
+<!-- PROJECT DETAILS: SASSAFRAS HOUSE -->
+<div id="sassafras-house-page" class="page project-details-page">
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" data-page="home-page">GROVE STUDIO</a>
+            <ul class="nav-links">
+                <li><a href="#" data-page="home-page">Home</a></li>
+                <li><a href="#" class="active" data-page="portfolio-page">Portfolio</a></li>
+                <li><a href="#" data-page="approach-page">Approach</a></li>
+                <li><a href="#" data-page="services-page">Services</a></li>
+                <li><a href="#" data-page="about-page">About</a></li>
+                <li><a href="#" class="btn nav-cta" data-page="contact-page">Start Project</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="section">
+        <div class="container">
+            <div style="margin-bottom: 20px;">
+                <a href="#" data-page="portfolio-page" style="display: flex; align-items: center;">
+                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                </a>
+            </div>
+            
+            <h1 class="section-title">Sassafras House</h1>
+            
+            <div class="project-detail">
+                <div class="project-section">
+                    <h3 class="project-section-title">Project Overview</h3>
+                    <p>This heritage extension project required a delicate balance between preserving the character of the original home while adding contemporary living spaces. The clients, a family of four, wanted to maintain the charm of their 1920s cottage while creating more functional areas for modern living.</p>
+                </div>
+                
+                <div class="project-gif-container">
+                    <img src="images/sassafras_gif.gif" alt="Sassafras House Transformation" class="project-gif" style="max-width: 100%; width: auto; height: auto;">
+                </div>
+                
+                <div class="project-section">
+                    <h3 class="project-section-title">Design Approach</h3>
+                    <p>Our approach honored the heritage features of the original home while creating a clear delineation between old and new. The extension is characterized by clean lines, generous glazing, and a refined material palette that complements rather than competes with the existing structure.</p>
+                    
+                    <div class="project-image-gallery">
+                        <img src="images/assets_project3_image2.jpg" alt="Sassafras House Interior" class="gallery-image">
+                        <img src="images/assets_project3_image3.jpg" alt="Sassafras House Exterior" class="gallery-image">
+                    </div>
+                </div>
+                
+                <div class="project-section">
+                    <h3 class="project-section-title">Key Features</h3>
+                    <ul>
+                        <li>Seamless transition between heritage and contemporary elements</li>
+                        <li>Double-height void with clerestory windows for abundant natural light</li>
+                        <li>Custom joinery that maximizes space efficiency</li>
+                        <li>Integrated indoor-outdoor dining area</li>
+                        <li>Preserved period details in the original home</li>
+                    </ul>
+                </div>
+                
+                <div class="project-client-testimonial">
+                    <p>"He's not an architect who designs just for the sake of a beautiful design, he greatly considers the people who will be living in it and bringing it to life. When he presented us with the final design, we felt an overwhelming sense that Dylan had created something that was truly 'us'."</p>
+                    <p class="testimonial-author">— Kate and Josh, Homeowners, Sassafras</p>
+                </div>
+                
+                <div class="project-navigation">
+                    <a href="#" class="project-nav-link" data-project="black-rock-house">
+                        <i class="fas fa-arrow-left"></i> Previous Project
+                    </a>
+                    <a href="#" class="project-nav-link" data-project="brighton-apartment">
+                        Next Project <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4 class="footer-title">Grove Studio</h4>
+                    <p>Transforming spaces with thoughtful, enduring design inspired by Mid-Century Modern principles.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-page="home-page">Home</a></li>
+                        <li><a href="#" data-page="portfolio-page">Portfolio</a></li>
+                        <li><a href="#" data-page="approach-page">Approach</a></li>
+                        <li><a href="#" data-page="services-page">Services</a></li>
+                        <li><a href="#" data-page="about-page">About</a></li>
+                        <li><a href="#" data-page="contact-page">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
+                        <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
+                        <li><a href="https://www.houzz.com.au/professionals/architects/grove-studio-pfvwau-pf~1234567" target="_blank">Houzz</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-links">
+                        <li>Melbourne, Australia</li>
+                        <li>info@grovestudio.com.au</li>
+                        <li>+61 412 345 678</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Grove Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
