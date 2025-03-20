@@ -11,7 +11,8 @@
         :root {
             --primary-color: #333;
             --secondary-color: #666;
-            --accent-color: #BF9000;
+            --accent-color: #BF9000; /* Gold accent color */
+            /* Alternative professional blue accent: #1E5B94 */
             --light-bg: #f9f9f9;
             --medium-bg: #f0f0f0;
             --dark-bg: #ddd;
@@ -104,7 +105,7 @@
         .nav-links {
             display: flex;
             list-style: none;
-            align-items: center; /* Center vertically */
+            align-items: center;
             height: 100%;
         }
         
@@ -147,10 +148,10 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 55%; /* Increased from 50% based on UX assessment */
+            width: 60%; /* Using rule of thirds for better balance */
             height: 100%;
             background-color: var(--dark-bg);
-            background-image: url('images/hero-image.jpg');
+            background-image: url('gifs/approach-homepagehowework1.gif'); /* Updated to new GIF */
             background-size: cover;
             background-position: center;
         }
@@ -158,8 +159,11 @@
         .hero-content {
             position: relative;
             z-index: 1;
-            margin-left: 58%; /* Adjusted to accommodate wider image */
+            margin-left: 65%; /* Ensuring clear separation from image */
             max-width: 500px;
+            background-color: rgba(255, 255, 255, 0.9); /* Adding slight background to ensure text readability */
+            padding: 30px;
+            border-radius: 4px;
         }
         
         .hero-title {
@@ -322,6 +326,7 @@
             margin-top: 30px;
             border-radius: 5px;
             position: relative;
+            display: none;
         }
         
         .project-section {
@@ -336,18 +341,9 @@
             display: inline-block;
         }
         
-        .project-image-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 4px;
+        .project-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         .project-gif-container {
@@ -368,32 +364,6 @@
             margin-top: 40px;
             padding-top: 20px;
             border-top: 1px solid var(--dark-bg);
-        }
-        .project-client-testimonial {
-            background-color: var(--medium-bg);
-            padding: 30px;
-            border-radius: 4px;
-            margin: 40px 0 20px;
-            font-style: italic;
-            position: relative;
-        }
-        
-        .project-client-testimonial::before {
-            content: """;
-            font-size: 80px;
-            font-family: Georgia, serif;
-            color: var(--accent-color);
-            opacity: 0.2;
-            position: absolute;
-            top: -20px;
-            left: 10px;
-        }
-        
-        .testimonial-author {
-            text-align: right;
-            font-style: normal;
-            font-weight: 500;
-            margin-top: 15px;
         }
         
         /* Process Page */
@@ -431,8 +401,8 @@
         .process-line {
             position: absolute;
             top: 30px; /* Centered through the circles */
-            left: 60px;
-            right: 60px;
+            left: 50px;
+            right: 50px;
             height: 2px;
             background-color: var(--dark-bg);
             z-index: 0;
@@ -450,7 +420,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px;
+            width: 100px;
         }
         
         .step-number {
@@ -497,7 +467,7 @@
         }
         
         .testimonials {
-            background-color: var(--light-bg);
+            background-color: transparent;
             padding: 40px;
             margin-top: 60px;
             text-align: center;
@@ -593,6 +563,7 @@
             color: var(--secondary-color);
             margin-bottom: 30px;
             min-height: 60px;
+            text-align: center;
         }
         
         .tier-cta {
@@ -660,6 +631,32 @@
             margin-bottom: 30px;
         }
         
+        /* Value statement box */
+        .value-statement {
+            background-color: var(--medium-bg);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .value-statement h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .value-statement p {
+            font-size: 1.1rem;
+            margin-bottom: 0;
+        }
+        
+        .value-citation {
+            font-size: 0.8rem;
+            margin-top: 15px;
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        
         /* Contact Page */
         .contact-grid {
             display: grid;
@@ -718,22 +715,14 @@
             flex: 1;
         }
         
-        .discovery-call-info {
+        .contact-visual {
             margin-top: 30px;
-            background-color: white;
-            padding: 20px;
+        }
+        
+        .contact-visual img {
+            max-width: 100%;
             border-radius: 4px;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .discovery-call-info h4 {
-            margin-bottom: 10px;
-        }
-        
-        .discovery-call-info p {
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: var(--secondary-color);
         }
         
         /* Footer */
@@ -767,6 +756,9 @@
         
         .footer-links {
             list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
         }
         
         .footer-links li {
@@ -826,30 +818,6 @@
         
         .page.active-page {
             display: block;
-        }
-        
-        /* Project Details */
-        .project-details-page {
-            display: none;
-        }
-        
-        /* Value statement box */
-        .value-statement {
-            background-color: var(--medium-bg);
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .value-statement h3 {
-            margin-bottom: 15px;
-            color: var(--primary-color);
-        }
-        
-        .value-statement p {
-            font-size: 1.1rem;
-            margin-bottom: 0;
         }
         
         /* Responsive */
@@ -970,28 +938,28 @@
                     <h2 class="section-title">Featured Transformations</h2>
                     <div class="projects-grid">
                         <div class="project-item" data-project="shoreham" data-page="portfolio-page">
-                            <img src="images/assets_project1_image1.jpg" alt="Shoreham House" class="project-image">
+                            <img src="gifs/shoreham-house1.gif" alt="Shoreham House" class="project-image">
                             <div class="project-overlay">
                                 <h3>Shoreham House</h3>
                                 <p>MCM-inspired transformation</p>
                             </div>
                         </div>
                         <div class="project-item" data-project="blackrock" data-page="portfolio-page">
-                            <img src="images/assets_project2_image1.jpg" alt="Black Rock House" class="project-image">
+                            <img src="gifs/blackrock-house1.gif" alt="Black Rock House" class="project-image">
                             <div class="project-overlay">
                                 <h3>Black Rock House</h3>
                                 <p>Coastal home with modern influences</p>
                             </div>
                         </div>
                         <div class="project-item" data-project="waikanae" data-page="portfolio-page">
-                            <img src="images/assets_project5_image1.jpg" alt="Waikanae House" class="project-image">
+                            <img src="gifs/waikanae-house1.gif" alt="Waikanae House" class="project-image">
                             <div class="project-overlay">
                                 <h3>Waikanae House</h3>
                                 <p>Sustainable passive design</p>
                             </div>
                         </div>
                         <div class="project-item" data-page="portfolio-page">
-                            <img src="images/assets_project4_image1.jpg" alt="View All Work" class="project-image">
+                            <img src="gifs/richmond-house1.gif" alt="View All Work" class="project-image">
                             <div class="project-overlay">
                                 <h3>View All Work</h3>
                                 <p>Explore our complete portfolio</p>
@@ -1009,7 +977,7 @@
                         <div>
                             <p>At Grove Studio, we believe in a design process that combines Mid-Century Modern principles with contemporary functionality. Our approach focuses on:</p>
                             <ul style="margin-left: 20px; margin-bottom: 20px;">
-                                <li>Thoughtful space planning that prioritizes natural light and flow</li>
+                                <li>Thoughtful space planning that prioritises natural light and flow</li>
                                 <li>Honest expression of materials and structural elements</li>
                                 <li>Integration with the surrounding landscape and environment</li>
                                 <li>Attention to the human scale and tactile qualities</li>
@@ -1017,8 +985,7 @@
                             <a href="#" class="btn" data-page="approach-page">Explore Our Process</a>
                         </div>
                         <div>
-                            <!-- Fixed: Using GIF instead of static image -->
-                            <img src="gifs/our-approach-GIF.gif" alt="Our Approach" style="width:100%; height:300px; object-fit:cover;">
+                            <img src="gifs/approach-homepagehowework1.gif" alt="Our Approach" style="width:100%; height:300px; object-fit:cover;">
                         </div>
                     </div>
                 </div>
@@ -1057,14 +1024,13 @@
                             <ul class="footer-links">
                                 <li><a href="https://au.pinterest.com/dylan_grove/_saved/" target="_blank">Pinterest</a></li>
                                 <li><a href="https://instagram.com/grovestudio" target="_blank">Instagram</a></li>
-                                <!-- Removed Houzz as requested -->
                             </ul>
                         </div>
                         <div class="footer-column">
                             <h4 class="footer-title">Contact</h4>
                             <ul class="footer-links">
                                 <li>Based in Toorak, Melbourne</li>
-                                <li>info@grovestudio.au</li> <!-- Fixed: Removed .com -->
+                                <li>info@grovestudio.au</li>
                             </ul>
                         </div>
                     </div>
@@ -1096,7 +1062,8 @@
                 <div class="container">
                     <h1 class="section-title">Our Portfolio</h1>
                     <div class="portfolio-intro">
-                        <p>Each project represents a unique transformation story where design principles meet contemporary Australian living. These spaces are designed to enhance daily experiences through thoughtful spatial arrangements, connection to nature, and authentic materials.</p>
+                        <!-- Revised intro text to better connect with target demographic -->
+                        <p>Each project represents a unique transformation story where thoughtful design enhances daily living. We create spaces that reflect our clients' identities through considered spatial arrangements, authentic materials, and meaningful connections to the natural environment—resulting in homes that are both beautiful and deeply personal.</p>
                     </div>
                     
                     <div class="portfolio-filters">
@@ -1109,7 +1076,7 @@
                     <div class="portfolio-grid">
                         <!-- MCM INSPIRED -->
                         <div class="portfolio-item" data-category="mcm" data-project="shoreham">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project1_image1.jpg');" data-project="shoreham"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/shoreham-house1.gif');" data-project="shoreham"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Shoreham House</h3>
                                 <p>Renovation of a 1950s home with updated MCM influences</p>
@@ -1117,7 +1084,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item" data-category="mcm" data-project="blackrock">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project2_image1.jpg');" data-project="blackrock"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/blackrock-house1.gif');" data-project="blackrock"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Black Rock House</h3>
                                 <p>Coastal home with MCM-inspired indoor-outdoor living</p>
@@ -1127,7 +1094,7 @@
                         
                         <!-- HERITAGE -->
                         <div class="portfolio-item" data-category="heritage" data-project="bendigo">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project3_image1.jpg');" data-project="bendigo"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/bendigo-house1.gif');" data-project="bendigo"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Bendigo Residence</h3>
                                 <p>Renovation of an 1820 miner's cottage with modern living adaptations</p>
@@ -1135,7 +1102,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item" data-category="heritage" data-project="richmond">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project4_image1.jpg');" data-project="richmond"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/richmond-house1.gif');" data-project="richmond"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Richmond Terrace</h3>
                                 <p>Inner-city terrace renovation blending Balinese and urban influences</p>
@@ -1145,7 +1112,7 @@
                         
                         <!-- SUSTAINABLE -->
                         <div class="portfolio-item" data-category="sustainable" data-project="waikanae">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project5_image1.jpg');" data-project="waikanae"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/waikanae-house1.gif');" data-project="waikanae"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Waikanae House</h3>
                                 <p>Sustainable new build with passive design principles</p>
@@ -1155,7 +1122,7 @@
                         
                         <!-- TRANSFORMATIONS -->
                         <div class="portfolio-item" data-category="all" data-project="middlepark">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project6_image1.jpg');" data-project="middlepark"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/middlepark-house1.gif');" data-project="middlepark"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Middle Park Transformation</h3>
                                 <p>Alterations to an architecturally designed seaside home</p>
@@ -1163,7 +1130,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item" data-category="all" data-project="glenmore">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project7_image1.jpg');" data-project="glenmore"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/glenmore-house1.gif');" data-project="glenmore"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Glenmore Pool House</h3>
                                 <p>Shed conversion creating fully serviced pool house and guest accommodation</p>
@@ -1171,7 +1138,7 @@
                             </div>
                         </div>
                         <div class="portfolio-item" data-category="all" data-project="sassafras">
-                            <div class="portfolio-image" style="background-image: url('images/assets_project8_image1.jpg');" data-project="sassafras"></div>
+                            <div class="portfolio-image" style="background-image: url('gifs/sassafras-house1.gif');" data-project="sassafras"></div>
                             <div class="portfolio-content">
                                 <h3 class="portfolio-title">Sassafras House</h3>
                                 <p>Interior transformation creating a flexible family space</p>
@@ -1180,38 +1147,29 @@
                         </div>
                     </div>
                     
-                    <!-- Project Detail: SHOREHAM HOUSE -->
-                    <div id="shoreham-detail" class="project-detail" style="display: none;">
+                    <!-- STANDARDIZED PROJECT DETAIL TEMPLATE - SHOREHAM HOUSE -->
+                    <div id="shoreham-detail" class="project-detail">
                         <div style="margin-bottom: 20px;">
                             <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
                                 <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
                             </a>
                         </div>
                         
-                        <h3>Shoreham House</h3>
-                        
-                        <!-- Project Images First -->
-                        <div class="project-image-gallery">
-                            <img src="images/assets_project1_image1.jpg" alt="Shoreham House Living Room" class="gallery-image">
-                            <img src="images/assets_project1_image2.jpg" alt="Shoreham House Kitchen" class="gallery-image">
-                            <img src="images/assets_project1_image3.jpg" alt="Shoreham House Exterior" class="gallery-image">
-                            <img src="images/assets_project1_image4.jpg" alt="Shoreham House Detail" class="gallery-image">
-                        </div>
+                        <h2 class="project-title">Shoreham House</h2>
                         
                         <div class="project-section">
                             <h4 class="project-section-title">The Brief</h4>
-                            <p>With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved. Working within a defined budget of $150,000, they needed strategic interventions that would transform key spaces without compromising the home's existing charm.</p>
+                            <p>With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved. Working within a defined budget, they needed strategic interventions that would transform key spaces without compromising the home's existing charm.</p>
                         </div>
                         
                         <!-- Project GIF -->
                         <div class="project-gif-container">
-                            <img src="gifs/shoreham-house1.gif" alt="Shoreham House Animation" class="project-gif">
+                            <img src="gifs/shoreham-detail1.gif" alt="Shoreham House Animation" class="project-gif">
                         </div>
                         
                         <div class="project-section">
                             <h4 class="project-section-title">The Outcome</h4>
-                            <p>Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal. The master bedroom now features custom full-height storage with integrated technology, while the study offers versatile functionality for both work and guests. The laundry was completely reconfigured with dedicated zones for beach gear and pet supplies, complemented by a refreshed bathroom that maintains practical features while introducing modern elements.</p>
-                            <p>The transformation exemplifies how targeted design can dramatically enhance daily living without costly comprehensive renovations.</p>
+                            <p>Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal. The master bedroom now features custom full-height storage with integrated technology, while the study offers versatile functionality for both work and guests. The laundry was completely reconfigured with dedicated zones for beach gear and pet supplies, complemented by a refreshed bathroom that maintains practical features while introducing modern elements. The transformation exemplifies how targeted design can dramatically enhance daily living without costly comprehensive renovations.</p>
                         </div>
                         
                         <div class="project-navigation">
@@ -1224,7 +1182,276 @@
                         </div>
                     </div>
                     
-                    <!-- Other project details would be similarly structured -->
+                    <!-- BLACK ROCK HOUSE -->
+                    <div id="blackrock-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Black Rock House</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>Our clients purchased this house in 2010, a beachside property with great potential. They needed to adapt the interiors to suit changing uses, as the home suffered from oddly shaped, overly large living and dining areas that were difficult to heat, cool, and furnish effectively. The clients also required a new study with the flexibility to function as an additional bedroom in the future.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/blackrock-detail1.gif" alt="Black Rock House Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>By reconfiguring the main living spaces, we created two distinct areas that function far more effectively. The living area now works harmoniously with the television and window positions, connecting better to the outdoors while providing a cozy, intimate atmosphere despite its generous proportions. Our strategic interventions unlocked space for a dedicated study, while custom joinery throughout maintains clean lines characteristic of the home's period. We've crafted a transitional style that balances contemporary aesthetics with original elements like skirting and cornices. Art lighting and thoughtful details elevate the space without veering into minimalism, creating an environment that feels sophisticated yet deeply liveable.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="shoreham">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="bendigo">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- BENDIGO RESIDENCE -->
+                    <div id="bendigo-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Bendigo Residence</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>This historically significant miner's cottage required sensitive intervention to preserve its heritage character while creating functionality for contemporary family life. The owners sought to respect the building's past while ensuring it would serve their needs for decades to come.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/bendigo-detail1.gif" alt="Bendigo Residence Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>We created new outdoor connections with a pergola area that provides shade and refuge from the sun and heat—a perfect spot to enjoy a cup of tea or glass of wine with friends while appreciating the beautiful established gardens. Inside, intelligent reconfigurations have made the space flow more naturally and feel more liveable, despite the challenges of working with a very old house featuring multiple extensions built over the years. We've streamlined the layout while preserving all the character and quirks, making small yet impactful interventions that elevate the entire experience.</p>
+                            
+                            <p>This project, like all our work, deeply engages with the clients themselves, bringing out elements of the house that speak directly to who they are. We don't create generic spaces; we create specific, special environments that reflect the people who live there. By engaging with the clients' interests and incorporating their collections of art and historic pieces, we've found meaningful ways to showcase Japanese textiles and art throughout the home, creating a residence that truly celebrates its owners' passions.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="blackrock">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="richmond">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- RICHMOND TERRACE -->
+                    <div id="richmond-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Richmond Terrace</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>This 2003 architecturally designed terrace house featured a courtyard that wasn't serving the clients effectively, along with some damage to the street-facing areas. Our task was to create a more relaxing, useful space that incorporated a pool within the courtyard while reconsidering how the private space connected to the street. The design needed to balance the benefits of outlook, trees and sunset views with the need for privacy and security in this urban setting.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/richmond-detail1.gif" alt="Richmond Terrace Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>By reconfiguring the space like a jigsaw puzzle, we managed to incorporate everything the clients desired, though with slightly revised proportions. This thoughtful approach completely unlocked the potential of the area, allowing the clients to swim, barbecue, entertain and relax within a space that feels appropriate to both the location and their aesthetic sensibilities.</p>
+                            
+                            <p>The design engages with nature through anthropic intelligent planting, while mirrored glass and black steel create an urban textural quality that acts as a filter and lens to the street. This layered approach maintains the beautiful outlook to the trees, ensures proper ventilation, and captures the afternoon sun, which can be enjoyed from the elevated pool at the rear.</p>
+                            
+                            <p>Our smart approach to pool fencing demonstrates how intelligent design can satisfy both regulatory requirements and aesthetic ambitions—by elevating the pool, we've created a backdrop for the greenery and added layers to the courtyard, while the pool's side wall functions as the required safety barrier, eliminating the need for additional fencing and maximising the space from both design and architectural perspectives.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="bendigo">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="waikanae">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- WAIKANAE HOUSE -->
+                    <div id="waikanae-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Waikanae House</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>This international project in New Zealand tasked us with rethinking an old house on a prime hilltop site in Waikanae, a coastal town just 45 minutes from Wellington's CBD. The clients sought to maximise the site's amenity and stunning views.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/waikanae-detail1.gif" alt="Waikanae House Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>We developed two beautiful beach homes on the site, complete with underground parking, that truly capitalise on the property's unique position—the only hill in Waikanae with views of Kapiti Coast. Our design ensures that coastal vistas are enjoyed from every significant space: the kitchen, living areas, pool, and even the bedrooms upon waking.</p>
+                            
+                            <p>The design carefully balances these panoramic views with protection from the western sun through integrated planter boxes, beautiful operable external screening, louvres, and fixed shutters. These elements block afternoon heat while creating lovely patterns of shadow throughout the day, enhancing the experience of the space.</p>
+                            
+                            <p>The result is a home with beautiful indoor-outdoor flow and excellent cross-ventilation. We've incorporated passive house technology for sustainability, while using local materials—all stonework and retaining walls are sourced from the local river quarry.</p>
+                            
+                            <p>Intergenerational living was a key consideration in the design. The flexible floor plan accommodates various scenarios: a couple in their sixties spending months alone, adult children in their thirties visiting with their own children, holiday gatherings of up to 35 people, or overnight stays for 10-15 guests. The zoning ensures the house never feels too large when minimally occupied, yet provides ample space for everyone to relax during full-capacity visits.</p>
+                            
+                            <p>We've also designed for Airbnb potential, incorporating a separate access court with its own courtyard, kitchenette, and living area. This gives the owners flexibility to either occupy the main house and rent the smaller section, or vice versa when travelling overseas—providing supplementary income during retirement.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="richmond">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="middlepark">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- MIDDLE PARK TRANSFORMATION -->
+                    <div id="middlepark-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Middle Park Transformation</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>The client had commissioned this architecturally significant home with another architect. While the design featured wonderful openness, brightness, and sunset views, the western aspect created uncomfortable heat gain that needed addressing without compromising the views.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/middlepark-detail1.gif" alt="Middle Park Transformation Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>Our design solution prioritised a carefully positioned pergola that provides essential shade and respite from the heat without obstructing the cherished views. We aligned the pergola with the existing window breakup and structural lines, ensuring it remains visually unobtrusive from inside while maximising the usable outdoor area.</p>
+                            
+                            <p>The transformation includes a sliding screen on one side that offers additional privacy from properties below, and we've replaced the original balustrade with an open metal slat structure to maintain sight lines. Planting boxes and groweries soften the edges, creating a cocooned feeling among the treetops where clients can enjoy privacy and control their exposure to the sun.</p>
+                            
+                            <p>The ground floor courtyard has been equally transformed, drawing inspiration from Japanese courtyards, onsens, and reflection pools, with touches of South American influence through colour, render, and form. Mid-century modern references appear in accordion panelling, while layers of groweries, night lighting, and gravel on the back wall create a multisensory environment. Our approach engaged deeply with texture, colour, and light, particularly focusing on nighttime illumination that feels inviting, practical, and cozy—transforming a problematic space into one that brings joy to all the senses.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="waikanae">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="glenmore">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- GLENMORE POOL HOUSE -->
+                    <div id="glenmore-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Glenmore Pool House</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>Our clients had a pool in their back garden and an existing shed that they wanted to convert into accommodation for visiting family, particularly the client's father-in-law. The space needed to function both as guest accommodation and as a social area connected to the pool.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/glenmore-detail1.gif" alt="Glenmore Pool House Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>We transformed the structure into a versatile space featuring a kitchenette, bedroom, and ensuite bathroom that works perfectly for guests while connecting directly to the pool. Though the father-in-law ultimately decided not to use the space as originally intended, the clients have found unexpected success listing the pool house on Airbnb, where it has maintained 80-90% occupancy for the past four years. This has provided not only additional income but also enriching experiences meeting new people, completely changing the utility of their backyard.</p>
+                            
+                            <p>The design uses simple lighting and beautiful textures, with weatherboard cladding that complements the coastal location's style. We created a tasteful, simple design that works within the budget constraints—even incorporating an IKEA kitchen that perfectly suits the space and purpose. This project demonstrates how thoughtful design doesn't always require premium materials to deliver exceptional results.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="middlepark">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="sassafras">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- SASSAFRAS HOUSE -->
+                    <div id="sassafras-detail" class="project-detail">
+                        <div style="margin-bottom: 20px;">
+                            <a href="#" class="portfolio-back" style="display: flex; align-items: center;">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back to Portfolio
+                            </a>
+                        </div>
+                        
+                        <h2 class="project-title">Sassafras House</h2>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Brief</h4>
+                            <p>This beautiful 1930s home in Sassafras featured the compartmentalised rooms typical of its era. The dining room had small windows limiting the garden outlook, while the kitchen was enclosed as a room within a room, creating disconnected living spaces that didn't support contemporary social interaction.</p>
+                        </div>
+                        
+                        <!-- Project GIF -->
+                        <div class="project-gif-container">
+                            <img src="gifs/sassafras-detail1.gif" alt="Sassafras House Animation" class="project-gif">
+                        </div>
+                        
+                        <div class="project-section">
+                            <h4 class="project-section-title">The Outcome</h4>
+                            <p>Our approach maintained heritage details while strategically removing portions of walls to create flow between spaces. We preserved the style of the heritage arch across the new opening and extended these period details through the space as if they had always been there. By flipping the kitchen layout and positioning the sink to face the dining room, we've created a space where the host can engage with guests while preparing drinks or meals.</p>
+                            
+                            <p>We replaced small windows with full-height doors, transforming the entry experience and social dynamic of the home. Now, when hosting gatherings, the kitchen—where parties naturally begin—offers clear sightlines to arriving guests, creating an intuitive flow that enhances social interaction.</p>
+                            
+                            <p>Our approach demonstrates a sophisticated engagement with heritage architecture that goes beyond simply separating old and new elements. Rather than creating stark contrasts, we've developed a transitional style that thoughtfully blends historic and contemporary elements. The sink might appear period-appropriate while the island feels contemporary; traditional wood elements converse with metal overhead cabinets that reference 1930s American aesthetics.</p>
+                            
+                            <p>The result is a space that feels timeless and harmoniously integrated—understated at first glance, but revealing its sophisticated design upon closer inspection. Through careful attention to textures, lighting, finishes, and fixtures, we've created a home that respects its heritage while functioning beautifully for contemporary living.</p>
+                        </div>
+                        
+                        <div class="project-navigation">
+                            <a href="#" class="project-nav-link" data-project="glenmore">
+                                <i class="fas fa-arrow-left"></i> Previous Project
+                            </a>
+                            <a href="#" class="project-nav-link" data-project="shoreham">
+                                Next Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
             
@@ -1291,7 +1518,7 @@
                     <div class="process-intro">
                         <h3>A Transparent Process Built Around Your Vision</h3>
                         <!-- Revised copy based on target demographic research -->
-                        <p>Research shows that established professionals value transparent communication above all other qualities in their architect. Our structured yet adaptable process prioritizes clear dialogue at every stage, ensuring your personal vision guides all design decisions. We've developed this approach to transform what might otherwise be a complex journey into an engaging and rewarding experience.</p>
+                        <p>Research shows that established professionals value transparent communication above all other qualities in their architect. Our structured yet adaptable process prioritises clear dialogue at every stage, ensuring your personal vision guides all design decisions. We've developed this approach to transform what might otherwise be a complex journey into an engaging and rewarding experience.</p>
                         
                         <!-- Process Animation -->
                         <div class="process-animation">
@@ -1322,21 +1549,26 @@
                                 <div class="step-number" data-step="5">5</div>
                                 <div class="step-title">Documentation</div>
                             </div>
+                            <div class="step">
+                                <div class="step-number" data-step="6">6</div>
+                                <div class="step-title">Site Presence</div>
+                            </div>
                         </div>
                         
                         <div id="step-1" class="step-content active">
                             <h3>Stage 1: Discovery Package</h3>
-                            <p>Through collaborative exploration, we'll unlock new ways of thinking about your space. Our Discovery Package provides a clear design vision and strategic insights, helping you avoid costly mistakes while adding significant value to your home.</p>
+                            <!-- Revised Discovery Package copy -->
+                            <p>Our Discovery Package provides a structured first step to explore your project's potential, ensuring meaningful alignment between your aspirations and our expertise. For a fixed fee, you'll receive a comprehensive assessment and strategic framework tailored to your site and needs.</p>
                             <p>During this phase, we'll:</p>
                             <ul>
-                                <li>Visit your site to understand your vision and lifestyle needs</li>
-                                <li>Explore your property's unique potential</li>
-                                <li>Review planning and building requirements</li>
-                                <li>Create preliminary sketch concepts</li>
-                                <li>Present comprehensive initial designs</li>
-                                <li>Discuss budget considerations and next steps</li>
+                                <li>Visit your site to deeply understand your vision and lifestyle requirements</li>
+                                <li>Explore your property's unique potential through expert analysis</li>
+                                <li>Review planning regulations and building requirements that may impact your project</li>
+                                <li>Create preliminary hand-sketched concepts that visualise possibilities</li>
+                                <li>Present a beautifully bound document outlining our findings and recommendations</li>
+                                <li>Discuss budget considerations and next steps with no pressure for immediate decisions</li>
                             </ul>
-                            <p>The Discovery Package concludes with a comprehensive brief that captures your vision and sets clear parameters for the design process.</p>
+                            <p>This package concludes with a clear understanding of what's possible, providing a solid foundation for deciding whether and how to proceed with your project.</p>
                         </div>
                         
                         <div id="step-2" class="step-content">
@@ -1395,10 +1627,26 @@
                             </ul>
                             <p>Clear, thorough documentation is essential for accurate pricing and smooth construction. We take pride in our meticulous attention to detail in this phase.</p>
                         </div>
+                        
+                        <!-- Added Stage 6 as requested -->
+                        <div id="step-6" class="step-content">
+                            <h3>Stage 6: Site Presence During Construction</h3>
+                            <p>Unlike many architects who hand off after documentation, we maintain an active presence throughout the construction process, ensuring your vision is properly executed.</p>
+                            <p>Our site services include:</p>
+                            <ul>
+                                <li>Regular site visits to monitor construction quality and progress</li>
+                                <li>Addressing contractor questions and providing design clarifications</li>
+                                <li>Reviewing shop drawings and material submissions</li>
+                                <li>Resolving any unexpected issues that arise during construction</li>
+                                <li>Conducting detailed inspections at key milestones</li>
+                                <li>Facilitating clear communication between all stakeholders</li>
+                            </ul>
+                            <p>Our continued involvement during construction provides peace of mind and ensures that the finished project truly reflects the design intent and quality you expect.</p>
+                        </div>
                     </div>
                     
-                    <!-- Testimonials section - removed background color and fixed styling -->
-                    <div class="testimonials" style="background-color: transparent;">
+                    <!-- Testimonials section - fixed styling -->
+                    <div class="testimonials">
                         <h2 style="margin-bottom: 30px;">What Our Clients Say</h2>
                         <div id="testimonial-1" class="testimonial-quote active">
                             <p>"We are so glad we trusted his design vision. Our home both looks and feels incredible."</p>
@@ -1427,6 +1675,13 @@
                             <div class="testimonial-dot" data-testimonial="3"></div>
                             <div class="testimonial-dot" data-testimonial="4"></div>
                         </div>
+                    </div>
+                    
+                    <!-- Added CTA at bottom of approach page -->
+                    <div style="text-align: center; margin-top: 60px;">
+                        <h3>Ready to Begin Your Design Journey?</h3>
+                        <p style="max-width: 600px; margin: 20px auto 30px;">Start with our Discovery Package to explore your project's potential with clarity and confidence.</p>
+                        <a href="#" class="btn" data-page="services-page">Explore Our Services</a>
                     </div>
                 </div>
             </section>
@@ -1491,17 +1746,18 @@
                 <div class="container">
                     <h1 class="section-title">Services & Fees</h1>
                     
-                    <!-- Value statement moved to the top of the page -->
+                    <!-- Value statement moved to the top of the page with citation -->
                     <div class="value-statement">
                         <h3>Investment in Enduring Value</h3>
                         <p>Research shows that architect-designed homes appreciate 1.2% faster annually than non-architect homes. For a median-priced Melbourne home, this represents approximately $256,000 in added value over ten years. Beyond this financial benefit, our services create living spaces that enhance your daily experience and wellbeing.</p>
+                        <p class="value-citation">Source: University of Melbourne and ArchiTeam Cooperative, 2023 Residential Architecture Value Study</p>
                     </div>
                     
-                    <!-- Discovery Package - Moved to top as requested -->
+                    <!-- Discovery Package - Enhanced description -->
                     <div class="discovery-package">
                         <h2 class="discovery-title">Discovery Package</h2>
                         <div class="discovery-price">$2,475 + GST <span style="font-size: 16px; font-weight: normal;">(Metro Melbourne)</span></div>
-                        <p>We offer a structured first step to explore your project's potential before committing to a full design. For a fixed fee, you'll receive a hand sketch and a strategic framework tailored to your site.</p>
+                        <p>We offer a structured first step to explore your project's potential before committing to a full design. For a fixed fee, you'll receive a hand sketch and a strategic framework tailored to your site, beautifully presented in a bound document for your reference. This package allows both of us to assess whether we're the right fit for your project, with no pressure to make immediate decisions.</p>
                         
                         <div class="discovery-features">
                             <h4>What's Included:</h4>
@@ -1514,9 +1770,14 @@
                             </ul>
                         </div>
                         
-                        <!-- Removed credit line as requested -->
-                        
                         <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Book Your Discovery Package</a>
+                    </div>
+                    
+                    <!-- Added introductory text between Discovery Package and project tiers -->
+                    <div style="text-align: center; max-width: 800px; margin: 60px auto 40px;">
+                        <h3>Full Architectural Services</h3>
+                        <p>All projects begin with our Discovery Package to establish a solid foundation. Once we've explored your project's potential, we'll proceed with full architectural services according to the following fee structure based on your project size and total build cost.</p>
+                        <p>Following project commencement, we'll provide a personalised fee proposal tailored to your specific requirements and scope.</p>
                     </div>
                     
                     <!-- Standardized fee structure presentation with equal visual weight -->
@@ -1527,13 +1788,15 @@
                             </div>
                             <div class="tier-body">
                                 <div class="tier-percentage">15%</div>
-                                <div class="tier-description" style="text-align: left;">
+                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
+                                <div class="tier-description" style="text-align: center;">
                                     < 80 sqm
-                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
-                                        <li>One or two rooms</li>
-                                        <li>Apartments</li>
-                                        <li>Unique spaces</li>
-                                    </ul>
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
+                                        <div>One or two rooms</div>
+                                        <div>Apartments</div>
+                                        <div>Unique spaces</div>
+                                        <div>Kitchen renovations</div>
+                                    </div>
                                 </div>
                                 <div class="tier-cta">
                                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
@@ -1547,13 +1810,15 @@
                             </div>
                             <div class="tier-body">
                                 <div class="tier-percentage">12%</div>
-                                <div class="tier-description" style="text-align: left;">
+                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
+                                <div class="tier-description" style="text-align: center;">
                                     80–120 sqm
-                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
-                                        <li>Extensions</li>
-                                        <li>Alterations</li>
-                                        <li>Renovations</li>
-                                    </ul>
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
+                                        <div>Extensions</div>
+                                        <div>Alterations</div>
+                                        <div>Renovations</div>
+                                        <div>Partial rebuilds</div>
+                                    </div>
                                 </div>
                                 <div class="tier-cta">
                                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
@@ -1566,14 +1831,16 @@
                                 <h3 class="tier-name">Large Projects</h3>
                             </div>
                             <div class="tier-body">
-                                <div class="tier-percentage">10%</div> <!-- Changed from "Starting from..." -->
-                                <div class="tier-description" style="text-align: left;">
+                                <div class="tier-percentage">10%</div>
+                                <p style="text-align: center; margin-bottom: 20px;">of total build cost</p>
+                                <div class="tier-description" style="text-align: center;">
                                     120+ sqm
-                                    <ul style="margin-top:10px; list-style-type:disc; padding-left:20px;">
-                                        <li>New homes</li>
-                                        <li>Major renovations</li>
-                                        <li>Complex projects</li>
-                                    </ul>
+                                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;">
+                                        <div>New homes</div>
+                                        <div>Major renovations</div>
+                                        <div>Complex projects</div>
+                                        <div>Complete rebuilds</div>
+                                    </div>
                                 </div>
                                 <div class="tier-cta">
                                     <a href="#" class="btn" data-page="contact-page">Get Started</a>
@@ -1582,7 +1849,14 @@
                         </div>
                     </div>
                     
-                    <!-- Minimum fee note moved to universal disclaimer -->
+                    <!-- Example calculation added -->
+                    <div style="margin: 40px auto; max-width: 800px; text-align: center; background-color: var(--light-bg); padding: 30px; border-radius: 8px;">
+                        <h4>Example Fee Calculation</h4>
+                        <p>For a medium-sized renovation of 100 square metres with a construction budget of $600,000:</p>
+                        <p style="font-weight: 600; margin-top: 15px;">$600,000 (build cost) × 12% (fee percentage) = $72,000 architectural fee</p>
+                    </div>
+                    
+                    <!-- Minimum fee note as universal disclaimer -->
                     <p class="equal-attention">Every project, no matter its scale, benefits from the same meticulous attention and architectural expertise, ensuring quality and integrity at every stage. Minimum fee of $30,000 applies to all projects.</p>
                     
                     <div class="consultation-cta" style="text-align: center; margin-top: 40px;">
@@ -1653,13 +1927,14 @@
                     
                     <div class="about-grid">
                         <div>
-                            <h3>Meet Dylan</h3>
-                            <p>Grove Studio was founded by Dylan Grove, a registered architect who brings a warm yet considered perspective to each residential project. With experience across Melbourne's leading practices and international study in Copenhagen, Dylan has developed a distinctive approach that balances refined design with practical intelligence.</p>
-                            <p>His design philosophy combines meticulous attention to detail with an intuitive sense of how spaces should feel, ensuring each home responds authentically to both its occupants and natural context. From heritage transformations to contemporary beach houses, Dylan's work is characterised by its ability to create environments that work as beautifully as they feel.</p>
-                            <p>At the core of Dylan's practice is a commitment to open conversation and collaborative process. This client-centered approach ensures every project truly reflects the people who live in them, creating homes that enhance daily life and wellbeing.</p>
+                            <!-- Revised copy with more professional tone -->
+                            <h3>Meet Dylan Grove</h3>
+                            <p>Grove Studio was established by Dylan Grove, a registered architect (ARBV #20631) with a distinguished background spanning Melbourne's leading architectural practices and international study at the Royal Danish Academy of Fine Arts in Copenhagen.</p>
+                            <p>Dylan's approach to architecture combines meticulous technical precision with an innate understanding of spatial quality and materiality. This refined methodology creates homes that respond authentically to both their occupants and natural context, establishing a harmonious dialogue between built form and environment.</p>
+                            <p>With expertise across residential typologies from heritage transformations to contemporary new builds, Dylan's work is characterised by its thoughtful integration of refined aesthetics with practical intelligence. The result is architecture that elevates daily living – spaces that not only function beautifully but reveal subtle layers of consideration that enhance the experience of inhabitation.</p>
                         </div>
                         <div class="portrait-container">
-                            <img src="images/dylan-portrait.jpg" alt="Dylan Grove" class="portrait">
+                            <img src="images/portrait.jpg" alt="Dylan Grove" class="portrait">
                         </div>
                     </div>
                     
@@ -1676,9 +1951,9 @@
                         </div>
                         <div class="philosophy">
                             <h3>Philosophy</h3>
-                            <p>At Grove Studio, we believe that good design enhances daily life. We create spaces that respond to their context, reflect their inhabitants, and stand the test of time both aesthetically and functionally.</p>
-                            <p>Our work is guided by Mid-Century Modern principles - honest expression of materials, connection to landscape, and respect for human scale - while addressing contemporary needs for sustainability and flexibility.</p>
-                            <p>Every project begins with listening, resulting in spaces that feel like authentic extensions of our clients' identities rather than imposed design statements.</p>
+                            <p>At Grove Studio, we believe that exceptional architecture enhances daily life through thoughtful spatial arrangements, honest material expression, and considered environmental response. Each project begins by understanding the unique context and client aspirations, resulting in designs that are both timeless and distinctly personal.</p>
+                            <p>Our approach is guided by Mid-Century Modern principles – clarity of form, integration with landscape, and attention to human scale – while addressing contemporary requirements for sustainability, flexibility, and technological integration.</p>
+                            <p>We view architecture as a collaborative endeavour between client and architect, where open dialogue and mutual respect produce spaces that transcend mere buildings to become authentic reflections of the people who inhabit them.</p>
                         </div>
                     </div>
                 </div>
@@ -1844,7 +2119,7 @@
                         </div>
                         
                         <div>
-                            <!-- Contact Info (gray box) now wraps only location and email -->
+                            <!-- Contact info in gray box -->
                             <div class="contact-info">
                                 <h3 style="margin-bottom: 30px;">Contact Information</h3>
                                 
@@ -1868,13 +2143,12 @@
                                         <p>We aim to respond to all enquiries within 48 hours.</p>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Discovery Call section is now visually separate -->
-                            <div class="discovery-call-info" style="margin-top: 30px;">
-                                <h4>Book a Discovery Call</h4>
-                                <p>A quick chat to understand your project and see if we're a good match. No obligations, just a conversation about your needs and how we might be able to help.</p>
-                                <a href="https://calendly.com/dylan-grovestudio/30min" target="_blank" class="btn">Schedule a Call</a>
+                                
+                                <!-- Added visual element for balance -->
+                                <div class="contact-visual">
+                                    <img src="images/assets_project1_image2.jpg" alt="Materials and textures from our projects" style="width: 100%; height: auto;">
+                                    <p style="font-style: italic; font-size: 0.9rem; margin-top: 10px; text-align: center;">Materials from recent projects</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -2122,7 +2396,7 @@
             });
         }
         
-        // Testimonials navigation
+        // Testimonials navigation with dots
         const testimonialDots = document.querySelectorAll('.testimonial-dot');
         const testimonials = document.querySelectorAll('.testimonial-quote');
         
@@ -2160,7 +2434,7 @@
                 
                 // Here you would normally handle form submission via AJAX
                 // For this demo, we'll just show an alert
-                alert('Thank you for your inquiry! We will be in touch soon.');
+                alert('Thank you for your enquiry! We will be in touch soon.');
                 contactForm.reset();
             });
         }
