@@ -2176,80 +2176,186 @@
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
                     const projectId = this.getAttribute('data-project');
-                    
-                    // Hide portfolio grid
-                    portfolioGrid.style.display = 'none';
-                    
-                    // Hide all project details
-                    projectDetails.forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show selected project detail
-                    document.getElementById(`${projectId}-detail`).style.display = 'block';
-                    
-                    // Hide filters
-                    document.querySelector('.portfolio-filters').style.display = 'none';
-                });
-            });
-            
-            portfolioBackLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // Hide all project details
-                    projectDetails.forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show portfolio grid
-                    portfolioGrid.style.display = 'grid';
-                    
-                    // Show filters
-                    document.querySelector('.portfolio-filters').style.display = 'flex';
-                });
-            });
-            
-            // Project Navigation within details
-            const projectNavLinks = document.querySelectorAll('.project-nav-link');
-            
-            projectNavLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const projectId = this.getAttribute('data-project');
-                    
-                    // Hide all project details
-                    projectDetails.forEach(detail => {
-                        detail.style.display = 'none';
-                    });
-                    
-                    // Show target project detail
-                    document.getElementById(`${projectId}-detail`).style.display = 'block';
-                    
-                    // Scroll to top of the project detail
-                    document.getElementById(`${projectId}-detail`).scrollIntoView();
-                });
-            });
-            
-            // GIF hover effect for portfolio thumbnails
-            const portfolioImages = document.querySelectorAll('.portfolio-image');
-            
-            portfolioImages.forEach(image => {
-                const projectId = image.getAttribute('data-project');
-                if (!projectId) return;
+               <script>
+    // Page Navigation
+    document.addEventListener('DOMContentLoaded', function() {
+        // Hide all pages except home initially
+        const pages = document.querySelectorAll('.page');
+        pages.forEach(page => {
+            if (page.id !== 'home-page') {
+                page.style.display = 'none';
+            }
+        });
+        
+        // Add event listeners to navigation links
+        const navLinks = document.querySelectorAll('[data-page]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetPageId = this.getAttribute('data-page');
                 
-                const staticSrc = image.style.backgroundImage;
-                const gifSrc = `url('gifs/${projectId}-house1.gif')`;
-                
-                image.addEventListener('mouseenter', () => {
-                    image.style.backgroundImage = gifSrc;
+                // Hide all pages
+                pages.forEach(page => {
+                    page.style.display = 'none';
                 });
                 
-                image.addEventListener('mouseleave', () => {
-                    image.style.backgroundImage = staticSrc;
+                // Show the target page
+                document.getElementById(targetPageId).style.display = 'block';
+                
+                // Update active state in navigation
+                navLinks.forEach(link => {
+                    if (link.getAttribute('data-page') === targetPageId) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Process Steps Interaction
+        const stepNumbers = document.querySelectorAll('.step-number');
+        const stepContents = document.querySelectorAll('.step-content');
+        
+        stepNumbers.forEach(step => {
+            step.addEventListener('click', function() {
+                const stepId = this.getAttribute('data-step');
+                
+                // Hide all step contents
+                stepContents.forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the selected step content
+                document.getElementById(`step-${stepId}`).classList.add('active');
+                
+                // Update active state
+                stepNumbers.forEach(s => {
+                    if (s.getAttribute('data-step') === stepId) {
+                        s.style.backgroundColor = 'var(--accent-color)';
+                    } else {
+                        s.style.backgroundColor = 'var(--primary-color)';
+                    }
                 });
             });
         });
-    </script>
-</body>
-</html>
+        
+        // Portfolio Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // Update active state
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Filter items
+                if (filter === 'all') {
+                    portfolioItems.forEach(item => {
+                        item.style.display = 'block';
+                    });
+                } else {
+                    portfolioItems.forEach(item => {
+                        if (item.getAttribute('data-category').includes(filter)) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+        
+        // Portfolio Project Details
+        const portfolioLinks = document.querySelectorAll('.portfolio-link');
+        const portfolioBackLinks = document.querySelectorAll('.portfolio-back');
+        const portfolioGrid = document.querySelector('.portfolio-grid');
+        const projectDetails = document.querySelectorAll('.project-detail');
+        
+        portfolioLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectId = this.getAttribute('data-project');
+                
+                // Hide portfolio grid
+                portfolioGrid.style.display = 'none';
+                
+                // Hide all project details
+                projectDetails.forEach(detail => {
+                    detail.style.display = 'none';
+                });
+                
+                // Show selected project detail
+                document.getElementById(`${projectId}-detail`).style.display = 'block';
+                
+                // Hide filters
+                document.querySelector('.portfolio-filters').style.display = 'none';
+            });
+        });
+        
+        portfolioBackLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Hide all project details
+                projectDetails.forEach(detail => {
+                    detail.style.display = 'none';
+                });
+                
+                // Show portfolio grid
+                portfolioGrid.style.display = 'grid';
+                
+                // Show filters
+                document.querySelector('.portfolio-filters').style.display = 'flex';
+            });
+        });
+        
+        // Project Navigation within details
+        const projectNavLinks = document.querySelectorAll('.project-nav-link');
+        
+        projectNavLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const projectId = this.getAttribute('data-project');
+                
+                // Hide all project details
+                projectDetails.forEach(detail => {
+                    detail.style.display = 'none';
+                });
+                
+                // Show target project detail
+                document.getElementById(`${projectId}-detail`).style.display = 'block';
+                
+                // Scroll to top of the project detail
+                document.getElementById(`${projectId}-detail`).scrollIntoView();
+            });
+        });
+        
+        // GIF hover effect for portfolio thumbnails
+        const portfolioImages = document.querySelectorAll('.portfolio-image');
+        
+        portfolioImages.forEach(image => {
+            const projectId = image.getAttribute('data-project');
+            if (!projectId) return;
+            
+            const staticSrc = image.style.backgroundImage;
+            const gifSrc = `url('gifs/${projectId}-house1.gif')`;
+            
+            image.addEventListener('mouseenter', () => {
+                image.style.backgroundImage = gifSrc;
+            });
+            
+            image.addEventListener('mouseleave', () => {
+                image.style.backgroundImage = staticSrc;
+            });
+        });
+    });
+</script>
