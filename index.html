@@ -77,13 +77,272 @@
       display: block;
     }
 
-    /* Additional styles... */
-    
-    /* Project content styles... */
-    
-    /* About page styles... */
-    
-    /* Contact page styles... */
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .sidebar-link {
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .sidebar-link:hover {
+      color: #718096;
+    }
+
+    /* Main content */
+    .main-content {
+      padding-top: 5rem;
+      padding-bottom: 2.5rem;
+    }
+
+    .page {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* Home page */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .project-item {
+      cursor: pointer;
+    }
+
+    .project-name {
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    /* Project detail page */
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-title {
+      font-size: 0.75rem;
+    }
+
+    .nav-arrows {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-arrow {
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+
+    .project-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .project-content {
+        flex-direction: row;
+      }
+
+      .project-image {
+        width: 58.333333%;
+      }
+
+      .project-details {
+        width: 41.666667%;
+      }
+    }
+
+    .project-image img {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-text {
+      font-size: 0.875rem;
+      line-height: 1.625;
+    }
+
+    .brief-section {
+      margin-bottom: 2rem;
+    }
+
+    /* About page */
+    .about-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .about-content {
+        flex-direction: row;
+      }
+
+      .about-left {
+        width: 41.666667%;
+      }
+
+      .about-right {
+        width: 58.333333%;
+      }
+    }
+
+    .about-intro {
+      font-size: 0.875rem;
+      line-height: 1.625;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-section-text {
+      font-size: 0.875rem;
+      line-height: 1.625;
+      margin-bottom: 1.5rem;
+    }
+
+    .philosophy-item {
+      margin-bottom: 1rem;
+    }
+
+    .philosophy-title {
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .philosophy-text {
+      font-size: 0.875rem;
+      line-height: 1.625;
+    }
+
+    .experience-list {
+      list-style-type: disc;
+      padding-left: 1rem;
+    }
+
+    .experience-item {
+      font-size: 0.875rem;
+      line-height: 1.625;
+      margin-bottom: 0.25rem;
+    }
+
+    /* Contact page */
+    .contact-title {
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-content {
+        flex-direction: row;
+      }
+
+      .contact-form-container {
+        width: 50%;
+      }
+
+      .contact-info-container {
+        width: 50%;
+      }
+    }
+
+    .form-section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-label {
+      font-size: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #e2e8f0;
+      font-size: 0.875rem;
+    }
+
+    .form-button {
+      background-color: #1a202c;
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      border: none;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      align-self: flex-start;
+    }
+
+    .contact-info-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info-text {
+      font-size: 0.875rem;
+      line-height: 1.625;
+    }
+
+    .contact-info-item {
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -108,23 +367,191 @@
     <!-- Home Page -->
     <div id="home-page" class="page active">
       <div class="projects-grid">
-        <!-- Project items... -->
+        <!-- Project 1 -->
+        <div class="project-item" onclick="navigateToProject(0)">
+          <img src="images/projects/shoreham/thumbnail.jpg" alt="Shoreham House">
+          <p class="project-name">SHOREHAM HOUSE</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-item" onclick="navigateToProject(1)">
+          <img src="images/projects/blackrock/thumbnail.jpg" alt="Black Rock House">
+          <p class="project-name">BLACK ROCK HOUSE</p>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-item" onclick="navigateToProject(2)">
+          <img src="images/projects/bendigo/thumbnail.jpg" alt="Bendigo Residence">
+          <p class="project-name">BENDIGO RESIDENCE</p>
+        </div>
+        <!-- Project 4 -->
+        <div class="project-item" onclick="navigateToProject(3)">
+          <img src="images/projects/richmond/thumbnail.jpg" alt="Richmond Terrace">
+          <p class="project-name">RICHMOND TERRACE</p>
+        </div>
+        <!-- Project 5 -->
+        <div class="project-item" onclick="navigateToProject(4)">
+          <img src="images/projects/waikanae/thumbnail.jpg" alt="Waikanae House">
+          <p class="project-name">WAIKANAE HOUSE</p>
+        </div>
+        <!-- Project 6 -->
+        <div class="project-item" onclick="navigateToProject(5)">
+          <img src="images/projects/middlepark/thumbnail.jpg" alt="Middle Park Transformation">
+          <p class="project-name">MIDDLE PARK TRANSFORMATION</p>
+        </div>
+        <!-- Project 7 -->
+        <div class="project-item" onclick="navigateToProject(6)">
+          <img src="images/projects/glenmore/thumbnail.jpg" alt="Glenmore Pool House">
+          <p class="project-name">GLENMORE POOL HOUSE</p>
+        </div>
+        <!-- Project 8 -->
+        <div class="project-item" onclick="navigateToProject(7)">
+          <img src="images/projects/sassafras/thumbnail.jpg" alt="Sassafras House">
+          <p class="project-name">SASSAFRAS HOUSE</p>
+        </div>
       </div>
     </div>
 
     <!-- Project Detail Page -->
     <div id="project-page" class="page">
-      <!-- Project content... -->
+      <div class="project-header">
+        <div class="project-title" id="project-title">PROJECT NAME</div>
+        <div class="nav-arrows">
+          <span class="nav-arrow" onclick="navigatePrevProject()">←</span>
+          <span class="nav-arrow" onclick="navigateNextProject()">→</span>
+        </div>
+      </div>
+      
+      <div class="project-content">
+        <div class="project-image">
+          <img id="project-main-image" src="" alt="Project Image">
+        </div>
+        
+        <div class="project-details">
+          <div class="brief-section">
+            <h2 class="section-title">The Brief</h2>
+            <p class="section-text" id="project-brief"></p>
+          </div>
+          
+          <div class="outcome-section">
+            <h2 class="section-title">The Outcome</h2>
+            <p class="section-text" id="project-outcome"></p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- About Page -->
     <div id="about-page" class="page">
-      <!-- About content... -->
+      <h1 class="about-title">ABOUT</h1>
+      
+      <div class="about-content">
+        <div class="about-left">
+          <img src="images/about/dylan-portrait.jpg" alt="Dylan Grove">
+        </div>
+        
+        <div class="about-right">
+          <p class="about-intro">
+            With experience across Melbourne's design landscape, Dylan brings a collaborative approach to every project. 
+            His understanding of Australian residential architecture is complemented by an appreciation for how thoughtful 
+            design transforms both spaces and lives.
+          </p>
+          
+          <h2 class="about-section-title">Professional Credentials</h2>
+          <p class="about-section-text">
+            Dylan holds a Master's in Architecture from Melbourne's top program, licensed with the Architects Registration 
+            Board of Victoria since 2016. His work has been recognized through multiple awards and publications, establishing 
+            his position as a sought-after voice in contemporary Australian design.
+          </p>
+          
+          <h2 class="about-section-title">Design Philosophy</h2>
+          <div class="philosophy-item">
+            <h3 class="philosophy-title">Authentic Modernism</h3>
+            <p class="philosophy-text">
+              I believe in honoring mid-century modern principles of clean lines, honest materials, and indoor-outdoor 
+              connection while adapting them to contemporary Australian contexts.
+            </p>
+          </div>
+          <div class="philosophy-item">
+            <h3 class="philosophy-title">Livable Sustainability</h3>
+            <p class="philosophy-text">
+              Environmental consciousness should enhance daily experience, not compromise it. I integrate sustainable 
+              solutions that feel natural and elevate comfort.
+            </p>
+          </div>
+          <div class="philosophy-item">
+            <h3 class="philosophy-title">Personalized Spaces</h3>
+            <p class="philosophy-text">
+              Your home should reflect your identity and support your lifestyle. My designs begin with understanding 
+              how you live and what matters most to you.
+            </p>
+          </div>
+          
+          <h2 class="about-section-title mt-6">Experience</h2>
+          <ul class="experience-list">
+            <li class="experience-item">Registered architect ARBV #12345</li>
+            <li class="experience-item">Member, Australian Institute of Architects</li>
+            <li class="experience-item">15+ years of residential experience</li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <!-- Contact Page -->
     <div id="contact-page" class="page">
-      <!-- Contact content... -->
+      <h1 class="contact-title">CONTACT</h1>
+      
+      <div class="contact-content">
+        <div class="contact-form-container">
+          <h2 class="form-section-title">Connect with us</h2>
+          <form class="contact-form">
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-control">
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Project Type</label>
+              <select class="form-control">
+                <option>Renovation</option>
+                <option>New Build</option>
+                <option>Extension</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="4"></textarea>
+            </div>
+            
+            <button type="submit" class="form-button">Submit</button>
+          </form>
+        </div>
+        
+        <div class="contact-info-container">
+          <h2 class="contact-info-title">GROVE STUDIO DETAILS</h2>
+          <div class="contact-info-text">
+            <p class="contact-info-item">
+              123 Collins Street<br>
+              Melbourne, VIC 3000
+            </p>
+            <p class="contact-info-item">+61 3 9123 4567</p>
+            <p class="contact-info-item">info@grovestudio.com.au</p>
+            <p class="contact-info-item">
+              Monday—Friday 9AM—5PM<br>
+              Weekends by appointment only
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
@@ -136,17 +563,121 @@
         name: 'SHOREHAM HOUSE',
         thumbnail: 'images/projects/shoreham/thumbnail.jpg',
         mainImage: 'images/projects/shoreham/main.jpg',
-        brief: 'With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved...',
-        outcome: 'Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal...'
+        brief: 'With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved. Working within a defined budget, they needed strategic interventions that would transform key spaces without compromising the home's existing charm.',
+        outcome: 'Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal. The master bedroom now features custom full-height storage with integrated technology, while the study offers versatile functionality for both work and guests. The laundry was completely reconfigured with dedicated zones for beach gear and pet supplies, complemented by a refreshed bathroom that maintains practical features while introducing modern elements.'
       },
-      // Additional projects...
+      {
+        id: 2,
+        name: 'BLACK ROCK HOUSE',
+        thumbnail: 'images/projects/blackrock/thumbnail.jpg',
+        mainImage: 'images/projects/blackrock/main.jpg',
+        brief: 'Our clients purchased this house in 2010, a beachside property with great potential. They needed to adapt the interiors to suit changing uses, as the home suffered from oddly shaped, overly large living and dining areas that were difficult to heat, cool, and furnish effectively. The clients also required a new study with the flexibility to function as an additional bedroom in the future.',
+        outcome: 'By reconfiguring the main living spaces, we created two distinct areas that function far more effectively. The living area now works harmoniously with the television and window positions, connecting better to the outdoors while providing a cozy, intimate atmosphere despite its generous proportions. Our strategic interventions unlocked space for a dedicated study, while custom joinery throughout maintains clean lines characteristic of the home's period.'
+      },
+      {
+        id: 3,
+        name: 'BENDIGO RESIDENCE',
+        thumbnail: 'images/projects/bendigo/thumbnail.jpg',
+        mainImage: 'images/projects/bendigo/main.jpg',
+        brief: 'This historically significant miner's cottage required sensitive intervention to preserve its heritage character while creating functionality for contemporary family life. The owners sought to respect the building's past while ensuring it would serve their needs for decades to come.',
+        outcome: 'We created new outdoor connections with a pergola area that provides shade and refuge from the sun and heat—a perfect spot to enjoy a cup of tea or glass of wine with friends while appreciating the beautiful established gardens. Inside, intelligent reconfigurations have made the space flow more naturally and feel more liveable, despite the challenges of working with a very old house featuring multiple extensions built over the years.'
+      },
+      {
+        id: 4,
+        name: 'RICHMOND TERRACE',
+        thumbnail: 'images/projects/richmond/thumbnail.jpg',
+        mainImage: 'images/projects/richmond/main.jpg',
+        brief: 'This 2003 architecturally designed terrace house featured a courtyard that wasn't serving the clients effectively, along with some damage to the street-facing areas. Our task was to create a more relaxing, useful space that incorporated a pool within the courtyard while reconsidering how the private space connected to the street.',
+        outcome: 'By reconfiguring the space like a jigsaw puzzle, we managed to incorporate everything the clients desired, though with slightly revised proportions. This thoughtful approach completely unlocked the potential of the area, allowing the clients to swim, barbecue, entertain and relax within a space that feels appropriate to both the location and their aesthetic sensibilities.'
+      },
+      {
+        id: 5,
+        name: 'WAIKANAE HOUSE',
+        thumbnail: 'images/projects/waikanae/thumbnail.jpg',
+        mainImage: 'images/projects/waikanae/main.jpg',
+        brief: 'This international project in New Zealand tasked us with rethinking an old house on a prime hilltop site in Waikanae, a coastal town just 45 minutes from Wellington's CBD. The clients sought to maximise the site's amenity and stunning views.',
+        outcome: 'We developed two beautiful beach homes on the site, complete with underground parking, that truly capitalise on the property's unique position—the only hill in Waikanae with views of Kapiti Coast. Our design ensures that coastal vistas are enjoyed from every significant space: the kitchen, living areas, pool, and even the bedrooms upon waking.'
+      },
+      {
+        id: 6,
+        name: 'MIDDLE PARK TRANSFORMATION',
+        thumbnail: 'images/projects/middlepark/thumbnail.jpg',
+        mainImage: 'images/projects/middlepark/main.jpg',
+        brief: 'The client had commissioned this architecturally significant home with another architect. While the design featured wonderful openness, brightness, and sunset views, the western aspect created uncomfortable heat gain that needed addressing without compromising the views.',
+        outcome: 'Our design solution prioritised a carefully positioned pergola that provides essential shade and respite from the heat without obstructing the cherished views. We aligned the pergola with the existing window breakup and structural lines, ensuring it remains visually unobtrusive from inside while maximising the usable outdoor area.'
+      },
+      {
+        id: 7,
+        name: 'GLENMORE POOL HOUSE',
+        thumbnail: 'images/projects/glenmore/thumbnail.jpg',
+        mainImage: 'images/projects/glenmore/main.jpg',
+        brief: 'Our clients had a pool in their back garden and an existing shed that they wanted to convert into accommodation for visiting family, particularly the client's father-in-law. The space needed to function both as guest accommodation and as a social area connected to the pool.',
+        outcome: 'We transformed the structure into a versatile space featuring a kitchenette, bedroom, and ensuite bathroom that works perfectly for guests while connecting directly to the pool. Though the father-in-law ultimately decided not to use the space as originally intended, the clients have found unexpected success listing the pool house on Airbnb, where it has maintained 80-90% occupancy for the past four years.'
+      },
+      {
+        id: 8,
+        name: 'SASSAFRAS HOUSE',
+        thumbnail: 'images/projects/sassafras/thumbnail.jpg',
+        mainImage: 'images/projects/sassafras/main.jpg',
+        brief: 'This beautiful 1930s home in Sassafras featured the compartmentalised rooms typical of its era. The dining room had small windows limiting the garden outlook, while the kitchen was enclosed as a room within a room, creating disconnected living spaces that didn't support contemporary social interaction.',
+        outcome: 'Our approach maintained heritage details while strategically removing portions of walls to create flow between spaces. We preserved the style of the heritage arch across the new opening and extended these period details through the space as if they had always been there. By flipping the kitchen layout and positioning the sink to face the dining room, we've created a space where the host can engage with guests while preparing drinks or meals.'
+      }
     ];
     
-    // Navigation functions...
+    // Global state
+    let currentPage = 'home';
+    let currentProject = 0;
     
-    // Project navigation functions...
+    // Toggle menu
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    }
     
-    // Update project page content function...
+    // Navigation
+    function navigateToPage(page) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.remove('active');
+      });
+      
+      // Show selected page
+      document.getElementById(page + '-page').classList.add('active');
+      
+      // Update state
+      currentPage = page;
+      
+      // Close menu
+      document.getElementById('sidebar').classList.remove('open');
+    }
+    
+    // Project navigation
+    function navigateToProject(index) {
+      currentProject = index;
+      updateProjectPage();
+      navigateToPage('project');
+    }
+    
+    function navigateNextProject() {
+      currentProject = (currentProject + 1) % projects.length;
+      updateProjectPage();
+    }
+    
+    function navigatePrevProject() {
+      currentProject = (currentProject - 1 + projects.length) % projects.length;
+      updateProjectPage();
+    }
+    
+    // Update project page content
+    function updateProjectPage() {
+      const project = projects[currentProject];
+      
+      document.getElementById('project-title').textContent = project.name;
+      document.getElementById('project-main-image').src = project.mainImage;
+      document.getElementById('project-main-image').alt = project.name;
+      document.getElementById('project-brief').textContent = project.brief;
+      document.getElementById('project-outcome').textContent = project.outcome;
+    }
   </script>
 </body>
 </html>
