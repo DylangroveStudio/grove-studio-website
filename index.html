@@ -1,574 +1,935 @@
+<!-- index.html (Home Page) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grove Studio Architecture</title>
-  <style>
-    /* Reset and base styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Helvetica Neue', Arial, sans-serif;
-      color: #333;
-      line-height: 1.6;
-      background-color: #fff;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    /* Header styles */
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #fff;
-      z-index: 50;
-      border-bottom: 1px solid #f1f1f1;
-    }
-
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.5rem 2rem;
-    }
-
-    .logo {
-      font-size: 0.875rem;
-      letter-spacing: 0.1em;
-      cursor: pointer;
-      text-transform: uppercase;
-    }
-
-    .menu-toggle {
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* Sidebar menu */
-    .sidebar {
-      position: fixed;
-      right: 0;
-      top: 0;
-      height: 100vh;
-      width: 18rem;
-      background-color: #fff;
-      z-index: 40;
-      padding-top: 5rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
-      border-left: 1px solid #f1f1f1;
-      display: none;
-    }
-
-    .sidebar.open {
-      display: block;
-    }
-
-    .sidebar-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .sidebar-link {
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-
-    .sidebar-link:hover {
-      color: #718096;
-    }
-
-    /* Main content */
-    .main-content {
-      padding-top: 5rem;
-      padding-bottom: 2.5rem;
-    }
-
-    .page {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      display: none;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    /* Home page */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 768px) {
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .project-item {
-      cursor: pointer;
-    }
-
-    .project-name {
-      font-size: 0.75rem;
-      margin-top: 0.5rem;
-    }
-
-    /* Project detail page */
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
-    }
-
-    .project-title {
-      font-size: 0.75rem;
-    }
-
-    .nav-arrows {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .nav-arrow {
-      font-size: 0.875rem;
-      cursor: pointer;
-    }
-
-    .project-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .project-content {
-        flex-direction: row;
-      }
-
-      .project-image {
-        width: 58.333333%;
-      }
-
-      .project-details {
-        width: 41.666667%;
-      }
-    }
-
-    .project-image img {
-      margin-bottom: 1.5rem;
-    }
-
-    .section-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-text {
-      font-size: 0.875rem;
-      line-height: 1.625;
-    }
-
-    .brief-section {
-      margin-bottom: 2rem;
-    }
-
-    /* About page */
-    .about-title {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .about-content {
-        flex-direction: row;
-      }
-
-      .about-left {
-        width: 41.666667%;
-      }
-
-      .about-right {
-        width: 58.333333%;
-      }
-    }
-
-    .about-intro {
-      font-size: 0.875rem;
-      line-height: 1.625;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-section-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .about-section-text {
-      font-size: 0.875rem;
-      line-height: 1.625;
-      margin-bottom: 1.5rem;
-    }
-
-    .philosophy-item {
-      margin-bottom: 1rem;
-    }
-
-    .philosophy-title {
-      font-size: 0.875rem;
-      font-weight: 500;
-      margin-bottom: 0.25rem;
-    }
-
-    .philosophy-text {
-      font-size: 0.875rem;
-      line-height: 1.625;
-    }
-
-    .experience-list {
-      list-style-type: disc;
-      padding-left: 1rem;
-    }
-
-    .experience-item {
-      font-size: 0.875rem;
-      line-height: 1.625;
-      margin-bottom: 0.25rem;
-    }
-
-    /* Contact page */
-    .contact-title {
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-    }
-
-    @media (min-width: 1024px) {
-      .contact-content {
-        flex-direction: row;
-      }
-
-      .contact-form-container {
-        width: 50%;
-      }
-
-      .contact-info-container {
-        width: 50%;
-      }
-    }
-
-    .form-section-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-label {
-      font-size: 0.75rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .form-control {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #e2e8f0;
-      font-size: 0.875rem;
-    }
-
-    .form-button {
-      background-color: #1a202c;
-      color: white;
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-      border: none;
-      cursor: pointer;
-      margin-top: 0.5rem;
-      align-self: flex-start;
-    }
-
-    .contact-info-title {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .contact-info-text {
-      font-size: 0.875rem;
-      line-height: 1.625;
-    }
-
-    .contact-info-item {
-      margin-bottom: 1rem;
-    }
-
-    /* Placeholder images */
-    .placeholder {
-      background-color: #f1f1f1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #999;
-      font-size: 12px;
-    }
-
-    .thumbnail-placeholder {
-      height: 300px;
-    }
-
-    .main-image-placeholder {
-      height: 500px;
-    }
-
-    .portrait-placeholder {
-      height: 600px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grove Studio | Architecture</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="header-inner">
-      <div class="logo" id="logo">GROVE STUDIO</div>
-      <div class="menu-toggle" id="menu-toggle">≡</div>
+    <header class="header">
+        <a href="index.html" class="logo">GROVE STUDIO</a>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </header>
+    
+    <div class="side-menu">
+        <button class="menu-close">&times;</button>
+        <ul class="menu-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
     </div>
-  </header>
-
-  <!-- Sidebar Menu -->
-  <div class="sidebar" id="sidebar">
-    <div class="sidebar-links">
-      <div class="sidebar-link" id="about-link">ABOUT</div>
-      <div class="sidebar-link" id="contact-link">CONTACT</div>
-    </div>
-  </div>
-
-  <!-- Main Content -->
-  <main class="main-content">
-    <!-- Home Page -->
-    <div id="home-page" class="page active">
-      <div class="projects-grid" id="projects-grid">
-        <!-- Project items will be dynamically generated -->
-      </div>
-    </div>
-
-    <!-- Project Detail Page -->
-    <div id="project-page" class="page">
-      <div class="project-header">
-        <div class="project-title" id="project-title">PROJECT NAME</div>
-        <div class="nav-arrows">
-          <span class="nav-arrow" id="prev-project">←</span>
-          <span class="nav-arrow" id="next-project">→</span>
+    
+    <main class="content">
+        <div class="project-grid" id="project-grid">
+            <!-- Project thumbnails will be populated by JavaScript -->
         </div>
-      </div>
-      
-      <div class="project-content">
-        <div class="project-image">
-          <div id="project-main-image" class="main-image-placeholder placeholder">Project Image</div>
-        </div>
-        
-        <div class="project-details">
-          <div class="brief-section">
-            <h2 class="section-title">The Brief</h2>
-            <p class="section-text" id="project-brief"></p>
-          </div>
-          
-          <div class="outcome-section">
-            <h2 class="section-title">The Outcome</h2>
-            <p class="section-text" id="project-outcome"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- About Page -->
-    <div id="about-page" class="page">
-      <h1 class="about-title">ABOUT</h1>
-      
-      <div class="about-content">
-        <div class="about-left">
-          <div class="portrait-placeholder placeholder">Dylan Grove Portrait</div>
-        </div>
-        
-        <div class="about-right">
-          <p class="about-intro">
-            With experience across Melbourne's design landscape, Dylan brings a collaborative approach to every project. 
-            His understanding of Australian residential architecture is complemented by an appreciation for how thoughtful 
-            design transforms both spaces and lives.
-          </p>
-          
-          <h2 class="about-section-title">Professional Credentials</h2>
-          <p class="about-section-text">
-            Dylan holds a Master's in Architecture from Melbourne's top program, licensed with the Architects Registration 
-            Board of Victoria since 2016. His work has been recognized through multiple awards and publications, establishing 
-            his position as a sought-after voice in contemporary Australian design.
-          </p>
-          
-          <h2 class="about-section-title">Design Philosophy</h2>
-          <div class="philosophy-item">
-            <h3 class="philosophy-title">Authentic Modernism</h3>
-            <p class="philosophy-text">
-              I believe in honoring mid-century modern principles of clean lines, honest materials, and indoor-outdoor 
-              connection while adapting them to contemporary Australian contexts.
-            </p>
-          </div>
-          <!-- More philosophy items -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact-page" class="page">
-      <h1 class="contact-title">CONTACT</h1>
-      
-      <div class="contact-content">
-        <div class="contact-form-container">
-          <h2 class="form-section-title">Connect with us</h2>
-          <form class="contact-form" id="contact-form">
-            <!-- Form fields -->
-            <button type="submit" class="form-button">Submit</button>
-          </form>
-        </div>
-        
-        <div class="contact-info-container">
-          <h2 class="contact-info-title">GROVE STUDIO DETAILS</h2>
-          <!-- Contact information -->
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <script>
-    // Project data
-    const projects = [
-      {
-        id: 1,
-        name: 'SHOREHAM HOUSE',
-        brief: 'With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved...',
-        outcome: 'Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal...'
-      },
-      // More projects...
-    ];
+    </main>
     
-    // Global state
-    let currentPage = 'home';
-    let currentProject = 0;
-    
-    // DOM Elements
-    const logo = document.getElementById('logo');
-    const menuToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
-    const aboutLink = document.getElementById('about-link');
-    const contactLink = document.getElementById('contact-link');
-    const projectsGrid = document.getElementById('projects-grid');
-    const prevProjectButton = document.getElementById('prev-project');
-    const nextProjectButton = document.getElementById('next-project');
-    const contactForm = document.getElementById('contact-form');
-    
-    // Initialize the page
-    function init() {
-      // Generate project grid
-      renderProjectGrid();
-      
-      // Add event listeners
-      logo.addEventListener('click', () => navigateToPage('home'));
-      menuToggle.addEventListener('click', toggleMenu);
-      aboutLink.addEventListener('click', () => navigateToPage('about'));
-      contactLink.addEventListener('click', () => navigateToPage('contact'));
-      prevProjectButton.addEventListener('click', navigatePrevProject);
-      nextProjectButton.addEventListener('click', navigateNextProject);
-      contactForm.addEventListener('submit', handleFormSubmit);
-    }
-    
-    // Toggle menu function
-    function toggleMenu() {
-      sidebar.classList.toggle('open');
-      menuToggle.textContent = sidebar.classList.contains('open') ? '×' : '≡';
-    }
-    
-    // Navigation function
-    function navigateToPage(page) {
-      document.querySelectorAll('.page').forEach(p => {
-        p.classList.remove('active');
-      });
-      document.getElementById(page + '-page').classList.add('active');
-      currentPage = page;
-      sidebar.classList.remove('open');
-      menuToggle.textContent = '≡';
-    }
-    
-    // Project navigation functions
-    function navigateToProject(index) {
-      currentProject = index;
-      updateProjectPage();
-      navigateToPage('project');
-    }
-    
-    function navigateNextProject() {
-      currentProject = (currentProject + 1) % projects.length;
-      updateProjectPage();
-    }
-    
-    function navigatePrevProject() {
-      currentProject = (currentProject - 1 + projects.length) % projects.length;
-      updateProjectPage();
-    }
-    
-    // Update project page content
-    function updateProjectPage() {
-      const project = projects[currentProject];
-      document.getElementById('project-title').textContent = project.name;
-      document.getElementById('project-main-image').textContent = project.name;
-      document.getElementById('project-brief').textContent = project.brief;
-      document.getElementById('project-outcome').textContent = project.outcome;
-    }
-    
-    // Handle form submission
-    function handleFormSubmit(event) {
-      event.preventDefault();
-      alert('Thank you for your message. We will get back to you soon.');
-    }
-    
-    // Initialize the page when DOM is loaded
-    document.addEventListener('DOMContentLoaded', init);
-  </script>
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
+
+<!-- project.html (Project Detail Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project | Grove Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">GROVE STUDIO</a>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </header>
+    
+    <div class="side-menu">
+        <button class="menu-close">&times;</button>
+        <ul class="menu-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+    
+    <main class="content">
+        <div class="project-header">
+            <h1 class="project-title" id="project-title"></h1>
+            <div class="project-navigation">
+                <button class="nav-arrow prev-project" aria-label="Previous project">&#8592;</button>
+                <button class="nav-arrow next-project" aria-label="Next project">&#8594;</button>
+            </div>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-image-container">
+                <img id="project-image" src="" alt="" class="project-image">
+            </div>
+            
+            <div class="project-details">
+                <div class="brief-section">
+                    <h2 class="section-title">THE BRIEF</h2>
+                    <p id="project-brief"></p>
+                </div>
+                
+                <div class="outcome-section">
+                    <h2 class="section-title">THE OUTCOME</h2>
+                    <p id="project-outcome"></p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- about.html (About Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Grove Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">GROVE STUDIO</a>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </header>
+    
+    <div class="side-menu">
+        <button class="menu-close">&times;</button>
+        <ul class="menu-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+    
+    <main class="content">
+        <h1 class="page-title">ABOUT</h1>
+        
+        <div class="about-content">
+            <div class="about-left">
+                <img src="images/about/dylan-portrait.jpg" alt="Dylan Grove, Principal Architect" class="portrait-image">
+            </div>
+            
+            <div class="about-right">
+                <p class="introduction-text">
+                    Grove Studio is Melbourne's leading boutique architecture practice specialising in high-end residential projects. Founded by Dylan Grove in 2010, our studio brings a personal approach to every project, combining mid-century modern influences with contemporary functionality.
+                </p>
+                
+                <div class="about-section">
+                    <h2 class="section-title">PROFESSIONAL CREDENTIALS</h2>
+                    <p>
+                        Grove Studio brings together a wealth of experience across Melbourne's leading studios. Dylan Grove is registered with the Architects Registration Board of Victoria, and is a member of the Australian Institute of Architects (AIA).
+                    </p>
+                </div>
+                
+                <div class="about-section">
+                    <h2 class="section-title">DESIGN PHILOSOPHY</h2>
+                    
+                    <div class="philosophy-item">
+                        <h3 class="philosophy-title">Enduring Quality</h3>
+                        <p>We believe architecture should transcend time, creating spaces that feel equally relevant and functional across decades—not just when initially completed.</p>
+                    </div>
+                    
+                    <div class="philosophy-item">
+                        <h3 class="philosophy-title">Context Sensitivity</h3>
+                        <p>Every project responds thoughtfully to its specific environment, whether urban, coastal, or rural, respecting the character of place while enhancing its potential.</p>
+                    </div>
+                    
+                    <div class="philosophy-item">
+                        <h3 class="philosophy-title">Personalised Solutions</h3>
+                        <p>We reject one-size-fits-all approaches, instead developing deeply customised designs that reflect each client's unique lifestyle, preferences, and aspirations.</p>
+                    </div>
+                </div>
+                
+                <div class="about-section">
+                    <h2 class="section-title">EXPERIENCE</h2>
+                    <ul class="experience-list">
+                        <li>Custom residential design and renovation</li>
+                        <li>Heritage restoration and adaptation</li>
+                        <li>Pool houses and guest accommodations</li>
+                        <li>Interior architecture and space planning</li>
+                        <li>Furniture and fixture design</li>
+                        <li>Project management and build oversight</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- contact.html (Contact Page) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Grove Studio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">GROVE STUDIO</a>
+        <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+    </header>
+    
+    <div class="side-menu">
+        <button class="menu-close">&times;</button>
+        <ul class="menu-links">
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </div>
+    
+    <main class="content">
+        <h1 class="page-title">CONTACT</h1>
+        
+        <div class="contact-content">
+            <div class="form-container">
+                <h2 class="section-title">GET IN TOUCH</h2>
+                
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="project-type">Project Type</label>
+                        <select id="project-type" name="project-type">
+                            <option value="new-build">New Build</option>
+                            <option value="renovation">Renovation</option>
+                            <option value="extension">Extension</option>
+                            <option value="interior">Interior Design</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="form-button">Submit</button>
+                </form>
+                
+                <div id="form-confirmation" class="form-confirmation hidden">
+                    Thank you for your message. We will be in touch shortly.
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h2 class="section-title">STUDIO DETAILS</h2>
+                
+                <div class="info-item">
+                    <p>
+                        <strong>Address</strong><br>
+                        Toorak, Melbourne VIC 3142
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <p>
+                        <strong>Phone</strong><br>
+                        +61 3 9123 4567
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <p>
+                        <strong>Email</strong><br>
+                        info@grovestudio.com.au
+                    </p>
+                </div>
+                
+                <div class="info-item">
+                    <p>
+                        <strong>Hours</strong><br>
+                        Monday—Friday 9AM—5PM<br>
+                        By appointment only
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="data.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<!-- data.js (Project Data) -->
+// Project data
+const projectsData = [
+    {
+        id: 1,
+        name: "SHOREHAM HOUSE",
+        thumbnail: "images/projects/shoreham/thumbnail.jpg",
+        mainImage: "images/projects/shoreham/main.jpg",
+        brief: "With this 1950s coastal home, our clients sought to enhance functionality while honouring the mid-century character they loved. Working within a defined budget, they needed strategic interventions that would transform key spaces without compromising the home's existing charm.",
+        outcome: "Through thoughtful, light-touch interventions, we created a home that works harder while maintaining its distinctive mid-century appeal. The master bedroom now features custom full-height storage with integrated technology, while the study offers versatile functionality for both work and guests. The laundry was completely reconfigured with dedicated zones for beach gear and pet supplies, complemented by a refreshed bathroom that maintains practical features while introducing modern elements. The transformation exemplifies how targeted design can dramatically enhance daily living without costly comprehensive renovations."
+    },
+    {
+        id: 2,
+        name: "BLACK ROCK HOUSE",
+        thumbnail: "images/projects/blackrock/thumbnail.jpg",
+        mainImage: "images/projects/blackrock/main.jpg",
+        brief: "Our clients purchased this house in 2010, a beachside property with great potential. They needed to adapt the interiors to suit changing uses, as the home suffered from oddly shaped, overly large living and dining areas that were difficult to heat, cool, and furnish effectively. The clients also required a new study with the flexibility to function as an additional bedroom in the future.",
+        outcome: "By reconfiguring the main living spaces, we created two distinct areas that function far more effectively. The living area now works harmoniously with the television and window positions, connecting better to the outdoors while providing a cozy, intimate atmosphere despite its generous proportions. Our strategic interventions unlocked space for a dedicated study, while custom joinery throughout maintains clean lines characteristic of the home's period. We've crafted a transitional style that balances contemporary aesthetics with original elements like skirting and cornices. Art lighting and thoughtful details elevate the space without veering into minimalism, creating an environment that feels sophisticated yet deeply liveable."
+    },
+    {
+        id: 3,
+        name: "BENDIGO RESIDENCE",
+        thumbnail: "images/projects/bendigo/thumbnail.jpg",
+        mainImage: "images/projects/bendigo/main.jpg",
+        brief: "This historically significant miner's cottage required sensitive intervention to preserve its heritage character while creating functionality for contemporary family life. The owners sought to respect the building's past while ensuring it would serve their needs for decades to come.",
+        outcome: "We created new outdoor connections with a pergola area that provides shade and refuge from the sun and heat—a perfect spot to enjoy a cup of tea or glass of wine with friends while appreciating the beautiful established gardens. Inside, intelligent reconfigurations have made the space flow more naturally and feel more liveable, despite the challenges of working with a very old house featuring multiple extensions built over the years. We've streamlined the layout while preserving all the character and quirks, making small yet impactful interventions that elevate the entire experience."
+    },
+    {
+        id: 4,
+        name: "RICHMOND TERRACE",
+        thumbnail: "images/projects/richmond/thumbnail.jpg",
+        mainImage: "images/projects/richmond/main.jpg",
+        brief: "This 2003 architecturally designed terrace house featured a courtyard that wasn't serving the clients effectively, along with some damage to the street-facing areas. Our task was to create a more relaxing, useful space that incorporated a pool within the courtyard while reconsidering how the private space connected to the street. The design needed to balance the benefits of outlook, trees and sunset views with the need for privacy and security in this urban setting.",
+        outcome: "By reconfiguring the space like a jigsaw puzzle, we managed to incorporate everything the clients desired, though with slightly revised proportions. This thoughtful approach completely unlocked the potential of the area, allowing the clients to swim, barbecue, entertain and relax within a space that feels appropriate to both the location and their aesthetic sensibilities. The design engages with nature through anthropic intelligent planting, while mirrored glass and black steel create an urban textural quality that acts as a filter and lens to the street. This layered approach maintains the beautiful outlook to the trees, ensures proper ventilation, and captures the afternoon sun, which can be enjoyed from the elevated pool at the rear."
+    },
+    {
+        id: 5,
+        name: "WAIKANAE HOUSE",
+        thumbnail: "images/projects/waikanae/thumbnail.jpg",
+        mainImage: "images/projects/waikanae/main.jpg",
+        brief: "This international project in New Zealand tasked us with rethinking an old house on a prime hilltop site in Waikanae, a coastal town just 45 minutes from Wellington's CBD. The clients sought to maximise the site's amenity and stunning views.",
+        outcome: "We developed two beautiful beach homes on the site, complete with underground parking, that truly capitalise on the property's unique position—the only hill in Waikanae with views of Kapiti Coast. Our design ensures that coastal vistas are enjoyed from every significant space: the kitchen, living areas, pool, and even the bedrooms upon waking. The design carefully balances these panoramic views with protection from the western sun through integrated planter boxes, beautiful operable external screening, louvres, and fixed shutters. These elements block afternoon heat while creating lovely patterns of shadow throughout the day, enhancing the experience of the space."
+    },
+    {
+        id: 6,
+        name: "MIDDLE PARK TRANSFORMATION",
+        thumbnail: "images/projects/middlepark/thumbnail.jpg",
+        mainImage: "images/projects/middlepark/main.jpg",
+        brief: "The client had commissioned this architecturally significant home with another architect. While the design featured wonderful openness, brightness, and sunset views, the western aspect created uncomfortable heat gain that needed addressing without compromising the views.",
+        outcome: "Our design solution prioritised a carefully positioned pergola that provides essential shade and respite from the heat without obstructing the cherished views. We aligned the pergola with the existing window breakup and structural lines, ensuring it remains visually unobtrusive from inside while maximising the usable outdoor area. The transformation includes a sliding screen on one side that offers additional privacy from properties below, and we've replaced the original balustrade with an open metal slat structure to maintain sight lines. Planting boxes and groweries soften the edges, creating a cocooned feeling among the treetops where clients can enjoy privacy and control their exposure to the sun."
+    },
+    {
+        id: 7,
+        name: "GLENMORE POOL HOUSE",
+        thumbnail: "images/projects/glenmore/thumbnail.jpg",
+        mainImage: "images/projects/glenmore/main.jpg",
+        brief: "Our clients had a pool in their back garden and an existing shed that they wanted to convert into accommodation for visiting family, particularly the client's father-in-law. The space needed to function both as guest accommodation and as a social area connected to the pool.",
+        outcome: "We transformed the structure into a versatile space featuring a kitchenette, bedroom, and ensuite bathroom that works perfectly for guests while connecting directly to the pool. Though the father-in-law ultimately decided not to use the space as originally intended, the clients have found unexpected success listing the pool house on Airbnb, where it has maintained 80-90% occupancy for the past four years. This has provided not only additional income but also enriching experiences meeting new people, completely changing the utility of their backyard."
+    },
+    {
+        id: 8,
+        name: "SASSAFRAS HOUSE",
+        thumbnail: "images/projects/sassafras/thumbnail.jpg",
+        mainImage: "images/projects/sassafras/main.jpg",
+        brief: "This beautiful 1930s home in Sassafras featured the compartmentalised rooms typical of its era. The dining room had small windows limiting the garden outlook, while the kitchen was enclosed as a room within a room, creating disconnected living spaces that didn't support contemporary social interaction.",
+        outcome: "Our approach maintained heritage details while strategically removing portions of walls to create flow between spaces. We preserved the style of the heritage arch across the new opening and extended these period details through the space as if they had always been there. By flipping the kitchen layout and positioning the sink to face the dining room, we've created a space where the host can engage with guests while preparing drinks or meals. We replaced small windows with full-height doors, transforming the entry experience and social dynamic of the home. Now, when hosting gatherings, the kitchen—where parties naturally begin—offers clear sightlines to arriving guests, creating an intuitive flow that enhances social interaction."
+    }
+];
+
+<!-- styles.css (Main Stylesheet) -->
+/* Base styles and variables */
+:root {
+    --primary-text: #333333;
+    --secondary-text: #718096;
+    --background: #FFFFFF;
+    --border-color: #F1F1F1;
+    --form-border: #E2E8F0;
+    --button-bg: #1A202C;
+    --button-text: #FFFFFF;
+    --placeholder-bg: #F1F1F1;
+    
+    --header-height: 80px;
+    --page-padding-top: 80px;
+    --page-padding-bottom: 40px;
+    --page-padding-side-desktop: 32px;
+    --page-padding-side-tablet: 24px;
+    --page-padding-side-mobile: 16px;
+    
+    --grid-gap: 40px;
+}
+
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: var(--primary-text);
+    background-color: var(--background);
+    line-height: 1.625;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--page-padding-side-desktop);
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 50;
+}
+
+.logo {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-text);
+}
+
+.menu-toggle:hover {
+    color: var(--secondary-text);
+    transition: color 0.2s ease;
+}
+
+/* Side menu styles */
+.side-menu {
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 18rem;
+    background-color: var(--background);
+    z-index: 40;
+    padding-top: 5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    border-left: 1px solid var(--border-color);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.side-menu.active {
+    transform: translateX(0);
+}
+
+.menu-close {
+    position: absolute;
+    top: 28px;
+    right: 32px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-text);
+}
+
+.menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.menu-links a {
+    text-decoration: none;
+    color: var(--primary-text);
+    font-size: 14px;
+    transition: color 0.2s ease;
+}
+
+.menu-links a:hover {
+    color: var(--secondary-text);
+}
+
+/* Main content container */
+.content {
+    padding-top: var(--page-padding-top);
+    padding-bottom: var(--page-padding-bottom);
+    padding-left: var(--page-padding-side-desktop);
+    padding-right: var(--page-padding-side-desktop);
+}
+
+/* Home page styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--grid-gap);
+    padding-top: 40px;
+}
+
+.project-item {
+    margin-bottom: 0;
+}
+
+.project-thumbnail {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    background-color: var(--placeholder-bg);
+}
+
+.project-name {
+    margin-top: 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Project detail page styles */
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-top: 40px;
+}
+
+.project-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.project-navigation {
+    display: flex;
+    gap: 16px;
+}
+
+.nav-arrow {
+    font-size: 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-text);
+    transition: color 0.2s ease;
+}
+
+.nav-arrow:hover {
+    color: var(--secondary-text);
+}
+
+.project-content {
+    display: flex;
+    gap: var(--grid-gap);
+}
+
+.project-image-container {
+    width: 58.333333%;
+}
+
+.project-image {
+    width: 100%;
+    background-color: var(--placeholder-bg);
+}
+
+.project-details {
+    width: 41.666667%;
+}
+
+.section-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.brief-section {
+    margin-bottom: 32px;
+}
+
+/* About page styles */
+.page-title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    font-weight: normal;
+    padding-top: 40px;
+}
+
+.about-content {
+    display: flex;
+    gap: var(--grid-gap);
+}
+
+.about-left {
+    width: 41.666667%;
+}
+
+.portrait-image {
+    width: 100%;
+    background-color: var(--placeholder-bg);
+}
+
+.about-right {
+    width: 58.333333%;
+}
+
+.introduction-text {
+    margin-bottom: 24px;
+}
+
+.about-section {
+    margin-bottom: 24px;
+}
+
+.philosophy-item {
+    margin-bottom: 16px;
+}
+
+.philosophy-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.experience-list {
+    list-style-type: disc;
+    padding-left: 16px;
+}
+
+.experience-list li {
+    margin-bottom: 4px;
+}
+
+/* Contact page styles */
+.contact-content {
+    display: flex;
+    gap: var(--grid-gap);
+}
+
+.form-container {
+    width: 50%;
+}
+
+.contact-info {
+    width: 50%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid var(--form-border);
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: var(--secondary-text);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(113, 128, 150, 0.2);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 8px 16px;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease;
+}
+
+.form-button:hover {
+    background-color: #2D3748;
+}
+
+.form-confirmation {
+    margin-top: 16px;
+    padding: 8px;
+    background-color: #F0FFF4;
+    border: 1px solid #68D391;
+    color: #2F855A;
+}
+
+.hidden {
+    display: none;
+}
+
+.info-item {
+    margin-bottom: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 1023px) {
+    .content {
+        padding-left: var(--page-padding-side-tablet);
+        padding-right: var(--page-padding-side-tablet);
+    }
+    
+    .header {
+        padding: 0 var(--page-padding-side-tablet);
+    }
+    
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-content, 
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .project-image-container, 
+    .project-details, 
+    .about-left, 
+    .about-right {
+        width: 100%;
+    }
+    
+    .project-image-container, 
+    .about-left {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 767px) {
+    .content {
+        padding-left: var(--page-padding-side-mobile);
+        padding-right: var(--page-padding-side-mobile);
+    }
+    
+    .header {
+        padding: 0 var(--page-padding-side-mobile);
+    }
+    
+    .side-menu {
+        width: 80%;
+        max-width: 18rem;
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        flex-direction: column;
+    }
+    
+    .form-container, 
+    .contact-info {
+        width: 100%;
+    }
+    
+    .contact-info {
+        margin-top: 40px;
+    }
+}
+
+/* scripts.js (Main JavaScript) */
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu toggle functionality
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const sideMenu = document.querySelector('.side-menu');
+    
+    if (menuToggle && sideMenu) {
+        // Toggle menu when hamburger icon is clicked
+        menuToggle.addEventListener('click', function() {
+            sideMenu.classList.add('active');
+        });
+        
+        // Close menu when X is clicked
+        if (menuClose) {
+            menuClose.addEventListener('click', function() {
+                sideMenu.classList.remove('active');
+            });
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!sideMenu.contains(event.target) && !menuToggle.contains(event.target) && sideMenu.classList.contains('active')) {
+                sideMenu.classList.remove('active');
+            }
+        });
+        
+        // Close menu when a menu item is clicked
+        const menuLinks = document.querySelectorAll('.menu-links a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                sideMenu.classList.remove('active');
+            });
+        });
+    }
+    
+    // Generate placeholder images for projects
+    function generatePlaceholderSrc(name, isLarge = false) {
+        const width = isLarge ? 800 : 400;
+        const height = isLarge ? 600 : 300;
+        return `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="${width}" height="${height}" fill="%23F1F1F1"/><text x="50%" y="50%" font-family="Arial" font-size="${isLarge ? 32 : 24}" fill="%23718096" text-anchor="middle" dominant-baseline="middle">${name}</text></svg>`;
+    }
+    
+    // Home page functionality
+    const projectGrid = document.getElementById('project-grid');
+    
+    if (projectGrid) {
+        // Generate project thumbnails
+        projectsData.forEach(project => {
+            const projectItem = document.createElement('div');
+            projectItem.className = 'project-item';
+            
+            // Use a placeholder image if the actual image is not available
+            const thumbnailSrc = project.thumbnail || generatePlaceholderSrc(project.name);
+            
+            projectItem.innerHTML = `
+                <a href="project.html?id=${project.id}">
+                    <img src="${thumbnailSrc}" alt="${project.name}" class="project-thumbnail">
+                    <div class="project-name">${project.name}</div>
+                </a>
+            `;
+            
+            projectGrid.appendChild(projectItem);
+        });
+    }
+    
+    // Project detail page functionality
+    const projectTitle = document.getElementById('project-title');
+    const projectImage = document.getElementById('project-image');
+    const projectBrief = document.getElementById('project-brief');
+    const projectOutcome = document.getElementById('project-outcome');
+    const prevProjectBtn = document.querySelector('.prev-project');
+    const nextProjectBtn = document.querySelector('.next-project');
+    
+    if (projectTitle && projectImage && projectBrief && projectOutcome) {
+        // Get project ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentProjectId = parseInt(urlParams.get('id')) || 1;
+        
+        // Load project details
+        function loadProject(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            
+            if (project) {
+                document.title = `${project.name} | Grove Studio`;
+                projectTitle.textContent = project.name;
+                
+                // Use a placeholder image if the actual image is not available
+                const imageSrc = project.mainImage || generatePlaceholderSrc(project.name, true);
+                
+                projectImage.src = imageSrc;
+                projectImage.alt = project.name;
+                projectBrief.textContent = project.brief;
+                projectOutcome.textContent = project.outcome;
+                
+                // Update URL without refreshing the page
+                window.history.replaceState({}, '', `project.html?id=${projectId}`);
+            }
+        }
+        
+        // Load initial project
+        loadProject(currentProjectId);
+        
+        // Handle navigation between projects
+        if (prevProjectBtn && nextProjectBtn) {
+            prevProjectBtn.addEventListener('click', function() {
+                currentProjectId = currentProjectId > 1 ? currentProjectId - 1 : projectsData.length;
+                loadProject(currentProjectId);
+            });
+            
+            nextProjectBtn.addEventListener('click', function() {
+                currentProjectId = currentProjectId < projectsData.length ? currentProjectId + 1 : 1;
+                loadProject(currentProjectId);
+            });
+        }
+    }
+    
+    // Contact form functionality
+    const contactForm = document.getElementById('contact-form');
+    const formConfirmation = document.getElementById('form-confirmation');
+    
+    if (contactForm && formConfirmation) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Basic form validation
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // In a real implementation, form data would be sent to a server
+            // For this example, just show the confirmation message
+            contactForm.reset();
+            formConfirmation.classList.remove('hidden');
+            
+            // Hide confirmation after 5 seconds
+            setTimeout(function() {
+                formConfirmation.classList.add('hidden');
+            }, 5000);
+        });
+    }
+});
